@@ -1,0 +1,47 @@
+﻿<Window x:Class="VistaGestionFacultad.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VistaGestionFacultad"
+        mc:Ignorable="d"
+        Title="Profesores" Height="470" Width="1000" Background="#FF4881A2">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="verProfesores" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,27,10,338" Content="Ver profesores" Click="VerProfesores_Click"/>
+        <Button Name="altaProfesor" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,124,10,241" Content="Alta de un profesor" Height="74" />
+        <Button Name="bajaProfesor" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,224,10,141" Content="Baja de un profesor" Height="74" Click="BajaProfesor_Click"/>
+        <Button Name="modificarProfesor" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,324,10,41" Content="Modificar un profesor" Height="74" Click="ModificarProfesor_Click"/>
+        <Grid Grid.Column="1" Name="displayBox3" Background="#FFB3C0C7" Margin="10">
+            <TextBlock Name="elegirProfesor" FontFamily="Times New Roman" Margin="10,10,308,366" TextWrapping="Wrap"></TextBlock>
+            <ComboBox Name="profesores" Margin="10,143,271,255" SelectionChanged="Profesores_SelectionChanged" Visibility="Collapsed" Height="21">
+                <ComboBoxItem Name="itemOne">Primer cuatrimestre - Mañana</ComboBoxItem>
+                <ComboBoxItem Name="itemTwo">Primer cuatrimestre - Tarde</ComboBoxItem>
+                <ComboBoxItem Name="itemThree">Primer cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemFour">Segundo cuatrimestre - Mañana</ComboBoxItem>
+                <ComboBoxItem Name="itemFive">Segundo cuatrimestre - Tarde</ComboBoxItem>
+                <ComboBoxItem Name="itemSix">Segundo cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemSeven">Tercer cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemEight">Cuarto cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemNine"></ComboBoxItem>
+                <ComboBoxItem Name="itemTen"></ComboBoxItem>
+                <ComboBoxItem Name="itemEleven"></ComboBoxItem>
+                <ComboBoxItem Name="itemTwelve"></ComboBoxItem>
+                <ComboBoxItem Name="itemThirteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemFourteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemFifteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemSixteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemSeventeen"></ComboBoxItem>
+                <ComboBoxItem Name="itemEightteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemNineteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemTwenty"></ComboBoxItem>
+
+                </ComboBox>
+        </Grid>
+        
+    </Grid>
+</Window>

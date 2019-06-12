@@ -1,0 +1,47 @@
+﻿<Window x:Class="VistaGestionFacultad.Window2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VistaGestionFacultad"
+        mc:Ignorable="d"
+        Title="Asignaturas" Height="450" Width="800" Background="#FF4881A2">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="320"/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button Name="inscribirAsignatura" Background="#FFB3C0C7" Content="Inscribirse a una materia" Margin="40,36,36,316" Grid.Column="0" FontFamily="Times New Roman" Click="InscribirAsignatura_Click"></Button>
+        <Button Name="verAulas" Background="#FFB3C0C7" Content="Ver las aulas disponibles" Margin="40,211,36,141" Grid.Column="0" FontFamily="Times New Roman" Click="VerAulas_Click"></Button>
+        <Grid Name="displayBoxSecond" Background="#FFB3C0C7" Grid.Column="1" Margin="10,20,10,29">
+            <TextBlock Name="elegirAsignaturaTexto" Margin="10,10,194,320" FontFamily="Times New Roman" Visibility="Collapsed"></TextBlock> 
+            <ComboBox Name="elegirAsignatura" Margin="10,82,0,267" HorizontalAlignment="Left" Width="280" Height="21" FontFamily="Times New Roman" SelectionChanged="ElegirCurso_SelectionChanged" Visibility="Collapsed">
+                <ComboBoxItem Name="itemOne">Primer cuatrimestre - Mañana</ComboBoxItem>
+                <ComboBoxItem Name="itemTwo">Primer cuatrimestre - Tarde</ComboBoxItem>
+                <ComboBoxItem Name="itemThree">Primer cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemFour">Segundo cuatrimestre - Mañana</ComboBoxItem>
+                <ComboBoxItem Name="itemFive">Segundo cuatrimestre - Tarde</ComboBoxItem>
+                <ComboBoxItem Name="itemSix">Segundo cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemSeven">Tercer cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemEight">Cuarto cuatrimestre - Noche</ComboBoxItem>
+                <ComboBoxItem Name="itemNine"></ComboBoxItem>
+                <ComboBoxItem Name="itemTen"></ComboBoxItem>
+                <ComboBoxItem Name="itemEleven"></ComboBoxItem>
+                <ComboBoxItem Name="itemTwelve"></ComboBoxItem>
+                <ComboBoxItem Name="itemThirteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemFourteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemFifteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemSixteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemSeventeen"></ComboBoxItem>
+                <ComboBoxItem Name="itemEightteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemNineteen"></ComboBoxItem>
+                <ComboBoxItem Name="itemTwenty"></ComboBoxItem>
+            </ComboBox>
+        </Grid>
+        
+    </Grid>
+    
+    
+</Window>

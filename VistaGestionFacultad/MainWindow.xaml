@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VistaGestionFacultad"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="Facultad" Width="410" Height="200" Background="#FF4881A2">
+    <Window.Resources>
+        <Image x:Key="exittIcon" Source="C:\Users\Juan\source\repos\Facultad\Facultad\Resources\exitIcon.png"/>
+    </Window.Resources>
+    <Grid Margin="0,0,0,3">
+        <Canvas Margin="0,0,0,366">
+            <Button x:Name="alumnoButton" HorizontalAlignment="Left" Margin="10,10,0,10" VerticalAlignment="Top" Height="52" Width="170" Content="Alumnos" RenderTransformOrigin="0.492,0.567" Click="AlumnoButton_Click" Background="#FFB3C0C7" FontFamily="Times New Roman"/>
+            <Button x:Name="profesorButton" HorizontalAlignment="Right" VerticalAlignment="Top" Content="Profesores" Height="52" Width="170" RenderTransformOrigin="0.499,0.372" Canvas.Left="212" Canvas.Top="10" Background="#FFB3C0C7" FontFamily="Times New Roman" Click="ProfesorButton_Click"/>
+            <Button Name="asignaturasButton" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Asignaturas" Height="52" Width="170" Canvas.Left="10" Canvas.Top="88" Background="#FFB3C0C7" FontFamily="Times New Roman" Click="AsignaturasButton_Click"/>
+            <Button Name="exitButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Content="{StaticResource exittIcon}" Height="52" Width="170" Background="#FFB3C0C7" Canvas.Left="212" Canvas.Top="88" Click="ExitButton_Click"/>
+        </Canvas>
+
     </Grid>
 </Window>
