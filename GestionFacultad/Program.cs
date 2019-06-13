@@ -10,7 +10,7 @@ namespace GestionFacultad
     {
         public static void Main(string[] args)
         {
-
+            //test
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show(); 
 
