@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace GestionFacultad
 {
     class Aula
@@ -17,15 +18,14 @@ namespace GestionFacultad
         private bool proyeccion;
         public bool Proyeccion { get { return proyeccion; } set { proyeccion = value; } }
 
-        public Aula(int i, int cap, bool con, bool proy)
+
+       /* public Aula(int i, int cap, bool con, bool proy)
         {
             this.id = i;
             this.capacidad = cap;
             this.conexionARed = con;
             this.proyeccion = proy;
-
-
-        }
+        }*/
 
 
 
