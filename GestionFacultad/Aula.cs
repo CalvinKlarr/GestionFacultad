@@ -18,14 +18,18 @@ namespace GestionFacultad
         private bool proyeccion;
         public bool Proyeccion { get { return proyeccion; } set { proyeccion = value; } }
 
+        private string aul;
+        public string Aul { get { return aul; } set { aul = value; } }
 
-       /* public Aula(int i, int cap, bool con, bool proy)
-        {
-            this.id = i;
-            this.capacidad = cap;
-            this.conexionARed = con;
-            this.proyeccion = proy;
-        }*/
+
+
+        /* public Aula(int i, int cap, bool con, bool proy)
+         {
+             this.id = i;
+             this.capacidad = cap;
+             this.conexionARed = con;
+             this.proyeccion = proy;
+         }*/
 
 
 

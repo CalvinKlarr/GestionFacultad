@@ -16,6 +16,8 @@ namespace GestionFacultad
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();  */
 
+            //ASIGNATURAS
+
             using (var db = new ProgramControl())
             {
              var a = new Asignaturas { Asign = "Arquitectura y Sistemas Operativos" };
@@ -125,11 +127,91 @@ namespace GestionFacultad
                 }
 
 
+                //AULAS 
+
+                using (var dbAula = new ProgramControl())
+                {
+                    var a1 = new Aula();
+                    var a2 = new Aula();
+                    var a3 = new Aula();
+                    var a4 = new Aula();
+                    var a5 = new Aula();
+                    var a6 = new Aula();
+                    var a7 = new Aula();
+                    var a8 = new Aula();
+
+                    a1.Id = 0;
+                    a1.Capacidad = 30;
+                    a1.ConexionARed = true;
+                    a1.Proyeccion = true;
+                    a1.Aul = "1.1";
+
+                    a2.Id = 0;
+                    a2.Capacidad = 30;
+                    a2.ConexionARed = true;
+                    a2.Proyeccion = true;
+                    a2.Aul = "1.2";
+
+                    a3.Id = 0;
+                    a3.Capacidad = 30;
+                    a3.ConexionARed = true;
+                    a3.Proyeccion = true;
+                    a3.Aul = "1.3";
+
+                    a4.Id = 0;
+                    a4.Capacidad = 30;
+                    a4.ConexionARed = true;
+                    a4.Proyeccion = true;
+                    a4.Aul = "2.1";
+
+                    a5.Id = 0;
+                    a5.Capacidad = 30;
+                    a5.ConexionARed = true;
+                    a5.Proyeccion = true;
+                    a5.Aul = "2.2";
+
+                    a6.Id = 0;
+                    a6.Capacidad = 30;
+                    a6.ConexionARed = true;
+                    a6.Proyeccion = true;
+                    a6.Aul = "2.3";
+
+                    a7.Id = 0;
+                    a7.Capacidad = 30;
+                    a7.ConexionARed = true;
+                    a7.Proyeccion = true;
+                    a7.Aul = "1.4";
+
+                    a8.Id = 0;
+                    a8.Capacidad = 30;
+                    a8.ConexionARed = true;
+                    a8.Proyeccion = true;
+                    a8.Aul = "1.5";
+
+                    db.Aulas.Add(a1);
+                    db.Aulas.Add(a2);
+                    db.Aulas.Add(a3);
+                    db.Aulas.Add(a4);
+                    db.Aulas.Add(a5);
+                    db.Aulas.Add(a6);
+                    db.Aulas.Add(a7);
+                    db.Aulas.Add(a8);
+                    db.SaveChanges();
+
+                    var queryy = from aul in db.Aulas
+                                orderby aul.Id
+                                select aul;
+                    foreach (var item in queryy)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
+                    Console.ReadKey();
 
 
+                    // lo q SIGUE
 
 
-            }
+                }
 
             Console.ReadKey();
             Console.WriteLine("Press any key to exit...");
