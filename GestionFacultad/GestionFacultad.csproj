@@ -56,6 +56,13 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="Asignaturas.cs" />
     <Compile Include="Aula.cs" />
+    <Compile Include="Calificacion.cs" />
+    <Compile Include="Curso.cs" />
+    <Compile Include="Migrations\201906172118553_InitialCreate.cs" />
+    <Compile Include="Migrations\201906172118553_InitialCreate.Designer.cs">
+      <DependentUpon>201906172118553_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profesor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ProgramControl.cs" />
@@ -71,6 +78,11 @@
       <Project>{79a64088-b33c-4251-83ee-08a81a4eeacc}</Project>
       <Name>VistaGestionFacultad</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201906172118553_InitialCreate.resx">
+      <DependentUpon>201906172118553_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

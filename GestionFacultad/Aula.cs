@@ -32,6 +32,15 @@ namespace GestionFacultad
          }*/
 
 
+        public override string ToString()
+        {
+            return "ID: " + this.id + "\n" +
+                    "Capacidad: " + this.capacidad + "\n" +
+                    "Conexion a red: " + this.conexionARed + "\n" +
+                    "Proyector: " + this.proyeccion + "\n" +
+                    "Aula: " + this.aul;
+
+        }
 
     }
 }
