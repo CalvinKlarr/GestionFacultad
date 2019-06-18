@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    class ProgramControl: DbContext
+    public class ProgramControl: DbContext
     {
 
         public DbSet<Asignaturas> Asigns { get; set; }
@@ -17,6 +17,13 @@ namespace GestionFacultad
         public DbSet<Profesor> Profes { get; set; }
 
         public DbSet<Aula> Aulas { get; set; }
+
+        public ProgramControl()
+        {
+
+        }
+
+        
 
 
     }

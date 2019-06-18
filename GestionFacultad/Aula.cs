@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    class Aula
+    public class Aula
     {
         private int id;
         public int Id { get { return id; } set { id = value; } }

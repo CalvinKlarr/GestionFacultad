@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    class Alumno: Usuario
+    public class Alumno: Usuario
     {
 
         private int id;

@@ -7,12 +7,14 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    class Profesor: Usuario
+    public class Profesor: Usuario
     {
 
         private List<string> materias;
-        [Key]
+        
         private int dni_ID;
+        [Key]
+        public int Dni_ID { get { return dni_ID; } set { dni_ID = value; } }
 
         public Profesor(string name, string lname, int doc, int phone, string direcc, List<string> materias)
         {

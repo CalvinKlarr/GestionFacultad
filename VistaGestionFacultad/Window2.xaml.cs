@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionFacultad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,8 +21,10 @@ namespace VistaGestionFacultad
     public partial class Window2 : Window
     {
         ComboBoxItem[] items = new ComboBoxItem[20];
-        public Window2()
+        ProgramControl db;
+        public Window2(ProgramControl programControl)
         {
+            db = programControl;
             InitializeComponent();
             items[0] = itemOne;
             items[1] = itemTwo;
@@ -50,6 +53,7 @@ namespace VistaGestionFacultad
             elegirAsignaturaTexto.Text = "Elija la asignatura a la que desea inscribirse";
             elegirAsignaturaTexto.Visibility = Visibility.Visible;
             elegirAsignatura.Visibility = Visibility.Visible;
+            elegirAula.Visibility = Visibility.Collapsed;
             for (int i = 8; i < 20; i++)
             {
                 items[i].Visibility = Visibility.Visible;
@@ -83,19 +87,15 @@ namespace VistaGestionFacultad
 
         private void VerAulas_Click(object sender, RoutedEventArgs e)
         {
-            elegirAsignaturaTexto.Text = "Elija el aula";
-            for (int i = 8; i < 20; i++)
-            {
-                items[i].Visibility = Visibility.Collapsed;
-            }
-            itemOne.Content = "Aula 1.1";
-            itemTwo.Content = "Aula 1.2";
-            itemThree.Content = "Aula 1.3";
-            itemFour.Content = "Aula 2.1";
-            itemFive.Content = "Aula 2.2";
-            itemSix.Content = "Aula 2.3";
-            itemSeven.Content = "Aula 1.4";
-            itemEight.Content = "Aula 1.5";
+            elegirAsignatura.Visibility = Visibility.Collapsed;
+            elegirAsignaturaTexto.Visibility = Visibility.Collapsed;
+            elegirAula.Visibility = Visibility.Visible;
+            elegirAula.ItemsSource = db.Aulas.ToList();
+        }
+
+        private void ElegirAula_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }
