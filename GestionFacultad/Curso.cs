@@ -6,13 +6,17 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    class Curso
+    public class Curso
     {
         public int id { get; set; }
 
-        private Asignaturas[] asignaturas;
-        private List<Alumno> alumnos;
-        private Aula aula;
+        public Asignaturas[] asignaturas;
+        public List<Alumno> alumnos;
+
+        public Aula aula { get; set; }
+      
+
+
         private string cur;
         public string Cur { get { return cur; } set { cur = value; } }
         private string division;

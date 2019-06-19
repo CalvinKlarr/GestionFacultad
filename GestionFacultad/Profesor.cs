@@ -10,7 +10,8 @@ namespace GestionFacultad
     public class Profesor: Usuario
     {
 
-        private List<string> materias;
+        public List<string> materias;
+
         
         private int dni_ID;
         [Key]
@@ -20,7 +21,7 @@ namespace GestionFacultad
         {
             this.nombre = name;
             this.apellido = lname;
-            this.dni_ID = doc;
+            this.dni = doc;
             this.tel = phone;
             this.direc = direcc;
             this.materias = materias = new List<string>();

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-     class Asignaturas
+    public class Asignaturas
     {
         [Key]
         public string Asign { get; set; }

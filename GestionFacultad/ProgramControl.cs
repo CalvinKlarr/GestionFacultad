@@ -18,6 +18,8 @@ namespace GestionFacultad
 
         public DbSet<Aula> Aulas { get; set; }
 
+        public DbSet<Curso> Cursos { get; set; }
+
         public ProgramControl()
         {
 

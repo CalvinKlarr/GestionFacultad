@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using VistaGestionFacultad;
+//using VistaGestionFacultad;
 
 
 namespace GestionFacultad
@@ -12,7 +12,7 @@ namespace GestionFacultad
     {
         public static void Main(string[] args)
         {
-            /*test
+            /*
             MainWindow mainwindow = new MainWindow();
             mainwindow.Show();  */
 
@@ -137,12 +137,14 @@ namespace GestionFacultad
 
 
                 }
-                
-                
-                //AULAS 
+
+
+                //AULAS y Cursos
+                bool isCursosEmpty = !db.Cursos.Any();
                 bool isAulaEmpty = !db.Aulas.Any();
-                if (isAulaEmpty)
-                {
+
+               if (isAulaEmpty & isCursosEmpty)
+               {
 
 
                     var a1 = new Aula();
@@ -212,6 +214,78 @@ namespace GestionFacultad
                     db.Aulas.Add(a8);
                     db.SaveChanges();
 
+
+
+                    //Cursos
+
+                    var c1 = new Curso();
+                    var c2 = new Curso();
+                    var c3 = new Curso();
+                    var c4 = new Curso();
+                    var c5 = new Curso();
+                    var c6 = new Curso();
+                    var c7 = new Curso();
+                    var c8 = new Curso();
+                    var c9 = new Curso();
+                    var c10 = new Curso();
+                    var c11 = new Curso();
+                    var c12 = new Curso();
+
+                    c1.Cur = "1er Cuatrimestre";
+                    c1.Division = "Turno Mañana";
+                    c1.aula = a1;
+                    c2.Cur = "2do Cuatrimestre";
+                    c2.Division = "Turno Mañana";
+                    c2.aula = a2;
+                    c3.Cur = "3ro Cuatrimestre";
+                    c3.Division = "Turno Mañana";
+                    c3.aula = a3;
+                    c4.Cur = "4to Cuatrimestre";
+                    c4.Division = "Turno Mañana";
+                    c4.aula = a4;
+
+                    c5.Cur = "1er Cuatrimestre";
+                    c5.Division = "Turno Tarde";
+                    c5.aula = a5;
+                    c6.Cur = "2do Cuatrimestre";
+                    c6.Division = "Turno Tarde";
+                    c6.aula = a6;
+                    c7.Cur = "3ro Cuatrimestre";
+                    c7.Division = "Turno Tarde";
+                    c7.aula = a7;
+                    c8.Cur = "4to Cuatrimestre";
+                    c8.Division = "Turno Tarde";
+                    c8.aula = a8;
+
+                    c9.Cur = "1er Cuatrimestre";
+                    c9.Division = "Turno Noche";
+                    c9.aula = a1;
+                    c10.Cur = "2do Cuatrimestre";
+                    c10.Division = "Turno Noche";
+                    c10.aula = a2;
+                    c11.Cur = "3ro Cuatrimestre";
+                    c11.Division = "Turno Noche";
+                    c11.aula = a3;
+                    c12.Cur = "4to Cuatrimestre";
+                    c12.Division = "Turno Noche";
+                    c12.aula = a4;
+
+                    db.Cursos.Add(c1);
+                    db.Cursos.Add(c2);
+                    db.Cursos.Add(c3);
+                    db.Cursos.Add(c4);
+                    db.Cursos.Add(c5);
+                    db.Cursos.Add(c6);
+                    db.Cursos.Add(c7);
+                    db.Cursos.Add(c8);
+                    db.Cursos.Add(c9);
+                    db.Cursos.Add(c10);
+                    db.Cursos.Add(c11);
+                    db.Cursos.Add(c12);
+                    db.SaveChanges();
+
+
+
                 }
                 else
                 {
@@ -225,20 +299,118 @@ namespace GestionFacultad
                     }
 
                 }
-                // lo q SIGUE
+                bool isProfesEmpty = !db.Profes.Any();
+                if (isProfesEmpty)
+                {
+
+                    // PROFES
+                    List<string> materias = new List<string>();
+
+                    var p1 = new Profesor("Reed", "Richards", 20151314, 610026, "Av 9 de Julio 360", materias);
+                    var p2 = new Profesor("Hank", "Pym", 21151520, 610006, "Av Wilde 564", materias);
+                    var p3 = new Profesor("Charles", "Xavier", 20789123, 620326, "José Hernandez 669", materias);
+                    var p4 = new Profesor("Bruce", "Banner", 20543542, 710026, " Arturo Illia 420", materias);
+                    var p5 = new Profesor("Anthony", "Stark", 22426814, 410426, "Calle Malibu 142", materias);
+                    var p6 = new Profesor("Stephen", "Strange", 23151360, 513426, "Av Alberdi 616", materias);
+                    var p7 = new Profesor("Peter", "Parker", 25760750, 600026, "H. Yrigoyen 442", materias);
+                    var p8 = new Profesor("Bill", "Foster", 20151314, 610026, "Frondizi 365", materias);
+                    var p9 = new Profesor("Steve", "Rogers", 10236250, 610026, "Entre Rios 942", materias);
+                    var p10 = new Profesor("Hank", "McCoy", 24740650, 610026, "José Hernandez 669", materias);
+                    var p11= new Profesor()
+
+                    db.Profes.Add(p1);
+                    db.Profes.Add(p2);
+                    db.Profes.Add(p3);
+                    db.Profes.Add(p4);
+                    db.Profes.Add(p5);
+                    db.Profes.Add(p6);
+                    db.Profes.Add(p7);
+                    db.Profes.Add(p8);
+                    db.Profes.Add(p9);
+                    db.Profes.Add(p10);
+                    db.SaveChanges();
+
+                } else
+                {
+                    var queryProfes = from dicks in db.Profes
+                                orderby dicks.Nombre
+                                select dicks;
+
+                    foreach (var item in queryProfes)
+                    {
+                        Console.WriteLine(item.Nombre+", "+ item.Apellido);
+
+                    }
+                }
+
+
+                bool isAlumnosEmpty = !db.Alumnos.Any();
+                if (isAlumnosEmpty)
+                {
+
+                    //ALUMNOS
+
+                    var alum1 = new Alumno("Peter Benjamin", "Parker", 41560550, 710026, "H. Yrigoyen 425", 20940);
+                    var alum2 = new Alumno("Lukas", "Cage", 41660550, 543419, "Catamarca 225", 20941);
+                    var alum3 = new Alumno("Benjamin", "Reilly", 41560750, 526681, "Mitre 145", 20942);
+                    var alum4 = new Alumno("Miles", "Morales", 42560850, 712236, "Formosa 369", 20943);
+                    var alum5 = new Alumno("Calvo", "Calvin", 41560452, 241267, "Liniers 749", 20944);
+                    var alum6 = new Alumno("Ben", "Tennyson", 41572050, 900739, "Av Lavalle 752", 20945);
+                    var alum7 = new Alumno("Gwen", "Tennyson", 41560820, 510783, "Av Lavalle 750", 20946);
+                    var alum8 = new Alumno("Mary Jane", "Watson", 41460850, 164373, "Cervantes 105", 20947);
+                    var alum9 = new Alumno("Harry", "Osborn", 40960550, 658669, "Av. Sarmiento 457", 20948);
+                    var alum10 = new Alumno("Eugene", "Thompson", 39966950, 687933, "Carlos Pellegrini 862", 20949);
+                    var alum11 = new Alumno("Liz", "Allan", 41580740, 164371, "Av San Martin 372", 20950);
+                    var alum12 = new Alumno("Eddie", "Brock", 39560852, 094858, "Arturo Illia 744", 20951);
+                    var alum13 = new Alumno("Josias", "Urutti", 41760750, 610026, "H. Yrigoyen 442", 23949);
+                    var alum14 = new Alumno("Niko", "Bellic", 40420420, 659989, "Av. Laprida 699", 20952);
+                    var alum15 = new Alumno("Carl", "Johnson", 40696969, 771267, "Colón 425", 20953);
+
+
+                    db.Alumnos.Add(alum1);
+                    db.Alumnos.Add(alum2);
+                    db.Alumnos.Add(alum3);
+                    db.Alumnos.Add(alum4);
+                    db.Alumnos.Add(alum5);
+                    db.Alumnos.Add(alum6);
+                    db.Alumnos.Add(alum7);
+                    db.Alumnos.Add(alum8);
+                    db.Alumnos.Add(alum9);
+                    db.Alumnos.Add(alum10);
+                    db.Alumnos.Add(alum11);
+                    db.Alumnos.Add(alum12);
+                    db.Alumnos.Add(alum13);
+                    db.Alumnos.Add(alum14);
+                    db.Alumnos.Add(alum15);
+                    db.SaveChanges();
+
+                }
+                else
+                {
+                    var queryAlumnos = from bois in db.Profes
+                                      orderby bois.Nombre
+                                      select bois;
+
+                    foreach (var item in queryAlumnos)
+                    {
+                        Console.WriteLine(item.Nombre + ", " + item.Apellido);
+
+                    }
+                }
+
 
 
             }
 
-                Console.ReadKey();
-                Console.WriteLine("Press any key to exit...");
+            Console.ReadKey();
+            Console.WriteLine("Press any key to exit...");
 
 
 
 
-            }
         }
     }
+}
 
 
 
