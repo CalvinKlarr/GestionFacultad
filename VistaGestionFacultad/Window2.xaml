@@ -16,7 +16,7 @@
         <Button Name="inscribirAsignatura" Background="#FFB3C0C7" Content="Inscribirse a una materia" Margin="40,36,36,316" Grid.Column="0" FontFamily="Times New Roman" Click="InscribirAsignatura_Click"></Button>
         <Button Name="verAulas" Background="#FFB3C0C7" Content="Ver las aulas disponibles" Margin="40,211,36,141" Grid.Column="0" FontFamily="Times New Roman" Click="VerAulas_Click"></Button>
         <Grid Name="displayBoxSecond" Background="#FFB3C0C7" Grid.Column="1" Margin="10,20,10,29">
-            <TextBlock Name="elegirAsignaturaTexto" Margin="10,10,194,320" FontFamily="Times New Roman" Visibility="Collapsed"></TextBlock> 
+            <TextBlock Name="elegirAsignaturaTexto" Margin="10,10,194,320" FontFamily="Times New Roman" Visibility="Collapsed"></TextBlock>
             <ComboBox Name="elegirAsignatura" Margin="10,82,0,267" HorizontalAlignment="Left" Width="280" Height="21" FontFamily="Times New Roman" SelectionChanged="ElegirCurso_SelectionChanged" Visibility="Collapsed">
                 <ComboBoxItem Name="itemOne">Primer cuatrimestre - Mañana</ComboBoxItem>
                 <ComboBoxItem Name="itemTwo">Primer cuatrimestre - Tarde</ComboBoxItem>
@@ -39,9 +39,10 @@
                 <ComboBoxItem Name="itemNineteen"></ComboBoxItem>
                 <ComboBoxItem Name="itemTwenty"></ComboBoxItem>
             </ComboBox>
+            <DataGrid Name="elegirAula" HorizontalAlignment="Left" Height="193" Margin="10,10,0,0" VerticalAlignment="Top" Width="340"  Visibility="Collapsed" IsReadOnly="True" SelectionChanged="ElegirAula_SelectionChanged"/>
         </Grid>
-        
+
     </Grid>
-    
-    
+
+
 </Window>

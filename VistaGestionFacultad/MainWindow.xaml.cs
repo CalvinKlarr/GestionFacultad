@@ -1,17 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using GestionFacultad;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace VistaGestionFacultad
 {
@@ -21,16 +11,14 @@ namespace VistaGestionFacultad
     public partial class MainWindow : Window
     {
         public static MainWindow AppWindow;
+        ProgramControl db;
 
         public MainWindow()
-
         {
-
+            db = new ProgramControl();
             InitializeComponent();
             AppWindow = this;
             
-
-
         }
 
         private void AlumnoButton_Click(object sender, RoutedEventArgs e)
@@ -41,12 +29,14 @@ namespace VistaGestionFacultad
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
+            db.SaveChanges();
+            db.Dispose();
             Close();
         }
 
         private void AsignaturasButton_Click(object sender, RoutedEventArgs e)
         {
-            Window2 window2 = new Window2();
+            Window2 window2 = new Window2(db);
             window2.Show();
         }
 
@@ -54,6 +44,11 @@ namespace VistaGestionFacultad
         {
             Window3 window3 = new Window3();
             window3.Show();
+        }
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            db.SaveChanges();
+            db.Dispose();
         }
     }
 }

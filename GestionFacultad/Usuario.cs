@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    abstract class Usuario
+    public abstract class Usuario
     {
         protected string nombre;
         public string Nombre { get { return nombre; } set { nombre = value; } }

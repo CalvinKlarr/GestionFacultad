@@ -7,21 +7,20 @@ using System.Threading.Tasks;
 
 namespace GestionFacultad
 {
-    class Profesor: Usuario
+    public class Profesor: Usuario
     {
-        [Key]
-        public int id;
-        public int Id { get { return id; } set { id = value; } }
 
         private List<string> materias;
-       
         
+        private int dni_ID;
+        [Key]
+        public int Dni_ID { get { return dni_ID; } set { dni_ID = value; } }
 
         public Profesor(string name, string lname, int doc, int phone, string direcc, List<string> materias)
         {
             this.nombre = name;
             this.apellido = lname;
-            this.id = doc;
+            this.dni_ID = doc;
             this.tel = phone;
             this.direc = direcc;
             this.materias = materias = new List<string>();
