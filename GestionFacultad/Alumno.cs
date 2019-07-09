@@ -13,14 +13,14 @@ namespace GestionFacultad
         public List<string> aprobadas = new List<string>();
         public int Id { get { return id; } set { id = value; } }
 
-        public Alumno(string name, string lname, int doc, int phone, string direcc, int id)
+        public Alumno(string name, string lname, int doc, int phone, string direcc)
         {
             this.nombre = name;
             this.apellido = lname;
             this.dni = doc;
             this.tel = phone;
             this.direc = direcc;
-            this.id = id;
+            
 
         }
 
