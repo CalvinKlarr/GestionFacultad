@@ -15,17 +15,16 @@ namespace GestionFacultad
         public List<Alumno> inscriptos = new List<Alumno>();
 
 
+        /*  public Asignaturas(string asig, List<string> correlatives)
+          {
+              this.Asign = asig;
+              this.correlativas = correlatives;
 
-      /*  public Asignaturas(string asig, List<string> correlatives)
-        {
-            this.Asign = asig;
-            this.correlativas = correlatives;
-       
 
-        public Asignaturas()
-        {
+          public Asignaturas()
+          {
 
-        } } */
+          } } */
 
     }
 }

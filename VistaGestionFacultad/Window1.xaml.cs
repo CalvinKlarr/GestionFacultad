@@ -1,6 +1,8 @@
-﻿using System;
+﻿using GestionFacultad;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -21,152 +23,172 @@ namespace VistaGestionFacultad
     /// </summary>
     public partial class Window1 : Window
     {
-        ComboBoxItem[] items = new ComboBoxItem[20];
-
-
-
-        
-        
-        public Window1()
+        //Contexto de la base de datos
+        ProgramControl db;
+        //Constructor, se instancia el contexto de la DB, y se agrega un evento al cerrarse la ventana
+        public Window1(ProgramControl programControl)
         {
-            
+            db = programControl;
             InitializeComponent();
-            
-            items[0] = itemOne;
-            items[1] = itemTwo;
-            items[2] = itemThree;
-            items[3] = itemFour;
-            items[4] = itemFive;
-            items[5] = itemSix;
-            items[6] = itemSeven;
-            items[7] = itemEight;
-            items[8] = itemNine;
-            items[9] = itemTen;
-            items[10] = itemEleven;
-            items[11] = itemTwelve;
-            items[12] = itemThirteen;
-            items[13] = itemFourteen;
-            items[14] = itemFifteen;
-            items[15] = itemSixteen;
-            items[16] = itemSeventeen;
-            items[17] = itemEightteen;
-            items[18] = itemNineteen;
-            items[19] = itemTwenty;
-
+            DataContext = this;
+            this.Closed += Window1_Closed;
         }
+        //Guarda los cambios en la db
+        private void Window1_Closed(object sender, EventArgs e)
+        {
+            db.SaveChanges();
+            
+        }
+
         public void sendText(string text)
         {
 
         }
-
+        //Evento al hacer click en ver alumnos por curso
         private void AlumnosPorcurso_Click(object sender, RoutedEventArgs e)
         {
-            elegirCursoTexto.Text = "Elija el curso del que desea ver los alumnos";
             legajoAlumno.Visibility = Visibility.Collapsed;
-            confirmButton.Visibility = Visibility.Collapsed;
             elegirCursoTexto.Visibility = Visibility.Visible;
-            elegirCurso.Visibility = Visibility.Visible;
-            itemOne.Content = "Primer cuatrimestre - Mañana";
-            itemTwo.Content = "Primer cuatrimestre - Tarde";
-            itemThree.Content = "Primer cuatrimestre - Noche";
-            itemFour.Content = "Segundo cuatrimestre - Mañana";
-            itemFive.Content = "Segundo cuatrimestre - Tarde";
-            itemSix.Content = "Segundo cuatrimestre - Noche";
-            itemSeven.Content = "Tercer cuatrimestre - Noche";
-            itemEight.Content = "Cuarto cuatrimestre - Noche";
+            elegirAsig.Visibility = Visibility.Visible;
+            elegirCursoTexto.Text = "Elija el curso del que desea ver los alumnos";
+            var dset = db.Cursos;
+            DbSet<Curso> qry = dset;
+            qry.Load();
 
-            for (int i = 8; i < 20; i++)
-            {
-                items[i].Visibility = Visibility.Collapsed;
-            }
-            
-            
-            
-            
+            cursoBox.ItemsSource = dset.Local.ToBindingList();
+            alumnosGrid.Visibility = Visibility.Collapsed;
+            confirmButton.Visibility = Visibility.Collapsed;
+            elegirAsig.Visibility = Visibility.Collapsed;
+            cursoBox.Visibility = Visibility.Visible;
+            confirmButton.Content = "Confirmar";
+
+
         }
-
+        //Evento del combobox de elegir asignatura, no cambie el nombre y quedo asi
         private void ElegirCurso_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Asignaturas asig =(Asignaturas)elegirAsig.SelectedItem;
+            db.Asigns.Load();
+            var dset = db.Asigns;
+            DbSet<Asignaturas> qry = dset;
+            qry.Load();
+            foreach (var item in dset)
+            {
+                if (item.Asign.Equals(asig.Asign))
+                {
+                    asig = item;
+                }
+            }
+
+            alumnosGrid.Visibility = Visibility.Visible;
+            alumnosGrid.ItemsSource = asig.inscriptos;
+
+            confirmButton.Visibility = Visibility.Visible;
+
             
             
         }
-
+        //Evento al hacer click en ver alumnos por materia
         private void AlumnosPorMateria_Click(object sender, RoutedEventArgs e)
         {
             legajoAlumno.Visibility = Visibility.Collapsed;
             elegirCursoTexto.Visibility = Visibility.Visible;
-            elegirCurso.Visibility = Visibility.Visible;
-            confirmButton.Visibility = Visibility.Collapsed;
-            for (int i = 9;i < 20; i++)
-            {
-                items[i].Visibility = Visibility.Visible;
-
-            }
+            elegirAsig.Visibility = Visibility.Visible;
             elegirCursoTexto.Text = "Elija la materia de la que desea ver los alumnos";
-            itemOne.Content = "Matematicas";
-            itemTwo.Content = "Ingles I";
-            itemThree.Content = "Sistema de procesamiento de datos";
-            itemFour.Content = "Programacion I";
-            itemFive.Content = "Laboratorio de Computacion I";
-            itemSix.Content = "Estadistica";
-            itemSeven.Content = "Ingles II";
-            itemEight.Content = "Arquitectura y sistemas operativos";
-            itemNine.Content = "Programacion II";
-            itemTen.Content = "Laboratorio de Computacion II";
-            itemEleven.Content = "Metodologia de la Investigacion";
-            itemTwelve.Content = "Programacion III";
-            itemThirteen.Content = "Laboratorio de Computacion III";
-            itemFourteen.Content = "Organizacion Contable de la Empresa";
-            itemFifteen.Content = "Organizacion Empresarial";
-            itemSixteen.Content = "Legislacion";
-            itemSeventeen.Content = "Diseño y administracion de base de datos";
-            itemEightteen.Content = "Laboratorio de computacion IV";
-            itemNineteen.Content = "Elementos de la investigacion operativa";
-            itemTwenty.Content = "Metodologia de sistemas";
+            var dset = db.Asigns;
+            DbSet<Asignaturas> qry = dset;
+            qry.Load();
+
+            elegirAsig.ItemsSource = dset.Local.ToBindingList();
+            alumnosGrid.Visibility = Visibility.Collapsed;
+            confirmButton.Visibility = Visibility.Collapsed;
+            cursoBox.Visibility = Visibility.Collapsed;
+            confirmButton.Content = "Confirmar";
+            
 
 
         }
-        
+        //Evento al hacer click en ver calificaciones
         private void VerCalificaciones_Click(object sender, RoutedEventArgs e)
         {
-            elegirCursoTexto.Text = "Ingrese el legajo del alumno para ver sus calificaciones";
-            elegirCursoTexto.Visibility = Visibility.Visible;
-            legajoAlumno.Visibility = Visibility.Visible;
+            elegirCursoTexto.Visibility = Visibility.Collapsed;
+            elegirCursoTexto.Visibility = Visibility.Collapsed;
+            legajoAlumno.Visibility = Visibility.Collapsed;
             confirmButton.Visibility = Visibility.Visible;
             confirmButton.Content = "Aceptar";
-            elegirCurso.Visibility = Visibility.Collapsed;
-            
-        }
+            elegirAsig.Visibility = Visibility.Collapsed;
+            alumnosGrid.Visibility = Visibility.Visible;
+            var dset = db.Califications;
+            DbSet<Calificacion> qry = dset;
+            qry.Load();
+            alumnosGrid.ItemsSource = dset.Local.ToBindingList();
+            cursoBox.Visibility = Visibility.Collapsed;
 
+        }
+        //Unused
         private void SubirCalificaciones_Click(object sender, RoutedEventArgs e)
         {
-            elegirCursoTexto.Text = "Ingrese el legajo del alumno para actualizar sus calificaciones";
-            elegirCursoTexto.Visibility = Visibility.Visible;
-            legajoAlumno.Visibility = Visibility.Visible;
-            confirmButton.Visibility = Visibility.Visible;
-            confirmButton.Content = "Aceptar";
-            elegirCurso.Visibility = Visibility.Collapsed;
+            
         }
-
+        //Unused
         private void BajaAlumno_Click(object sender, RoutedEventArgs e)
         {
-            elegirCursoTexto.Text = "Ingrese el legajo del alumno para darlo de baja del sistema";
-            elegirCursoTexto.Visibility = Visibility.Visible;
-            legajoAlumno.Visibility = Visibility.Visible;
-            confirmButton.Visibility = Visibility.Visible;
-            confirmButton.Content = "Aceptar";
-            elegirCurso.Visibility = Visibility.Collapsed;
+            
 
         }
-
+        //Evento al hacer click en modificar alumnos
         private void ModificarAlumno_Click(object sender, RoutedEventArgs e)
         {
-            elegirCursoTexto.Text = "Ingrese el legajo del alumno para actualizar su entrada en el sistema";
-            elegirCursoTexto.Visibility = Visibility.Visible;
-            legajoAlumno.Visibility = Visibility.Visible;
+            
+            elegirCursoTexto.Visibility = Visibility.Collapsed;
+            legajoAlumno.Visibility = Visibility.Collapsed;
             confirmButton.Visibility = Visibility.Visible;
-            confirmButton.Content = "Aceptar";
-            elegirCurso.Visibility = Visibility.Collapsed;
+            cursoBox.Visibility = Visibility.Collapsed;
+            confirmButton.Content = "Confirmar";
+            
+            elegirAsig.Visibility = Visibility.Collapsed;
+            alumnosGrid.Visibility = Visibility.Visible;
+            var dset = db.Alumnos;
+            DbSet<Alumno> qry = dset;
+            qry.Load();
+            alumnosGrid.ItemsSource = dset.Local.ToBindingList();
+            
+            
+           
+        }
+        //Unused
+        private void AlumnosGrid_TargetUpdated(object sender, DataTransferEventArgs e)
+        {
+            
+        }
+        //Evento del boton confirmar, para guardar cambios por las dudas
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            
+            
+            db.SaveChanges();
+        }
+        //Combobox de elegir curso, ahora si lo nombre bien
+        private void CursoBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Curso cur = (Curso)cursoBox.SelectedItem;
+            db.Cursos.Load();
+            var dset = db.Cursos;
+            DbSet<Curso> qry = dset;
+            qry.Load();
+            foreach (var item in dset)
+            {
+                if (item.CurDivision.Equals(cur.CurDivision))
+                {
+                    cur = item;
+                }
+            }
+
+            alumnosGrid.Visibility = Visibility.Visible;
+            alumnosGrid.ItemsSource = cur.alumnos;
+
+            confirmButton.Visibility = Visibility.Visible;
         }
     }
 }

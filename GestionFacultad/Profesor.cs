@@ -11,17 +11,20 @@ namespace GestionFacultad
     {
 
         public List<string> materias;
-
         
         private int dni_ID;
         [Key]
         public int Dni_ID { get { return dni_ID; } set { dni_ID = value; } }
+        public Profesor()
+        {
+
+        }
 
         public Profesor(string name, string lname, int doc, int phone, string direcc, List<string> materias)
         {
             this.nombre = name;
             this.apellido = lname;
-            this.dni = doc;
+            this.Dni = doc;
             this.tel = phone;
             this.direc = direcc;
             this.materias = materias = new List<string>();

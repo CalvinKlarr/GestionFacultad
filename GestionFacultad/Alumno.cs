@@ -23,5 +23,10 @@ namespace GestionFacultad
             this.id = id;
 
         }
+
+        public Alumno()
+        {
+
+        }
     }
 }

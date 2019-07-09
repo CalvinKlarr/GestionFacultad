@@ -5,16 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VistaGestionFacultad"
         mc:Ignorable="d"
-        Title="Asignaturas" Height="450" Width="800" Background="#FF4881A2">
+        Title="Aulas" Height="450" Width="800" Background="#FF4881A2">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="320"/>
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-
-        <Button Name="inscribirAsignatura" Background="#FFB3C0C7" Content="Inscribirse a una materia" Margin="40,36,36,316" Grid.Column="0" FontFamily="Times New Roman" Click="InscribirAsignatura_Click"></Button>
-        <Button Name="verAulas" Background="#FFB3C0C7" Content="Ver las aulas disponibles" Margin="40,211,36,141" Grid.Column="0" FontFamily="Times New Roman" Click="VerAulas_Click"></Button>
+        <Button Name="verAulas" Background="#FFB3C0C7" Content="Ver las aulas disponibles" Margin="34,151,42,201" Grid.Column="0" FontFamily="Times New Roman" Click="VerAulas_Click"></Button>
         <Grid Name="displayBoxSecond" Background="#FFB3C0C7" Grid.Column="1" Margin="10,20,10,29">
             <TextBlock Name="elegirAsignaturaTexto" Margin="10,10,194,320" FontFamily="Times New Roman" Visibility="Collapsed"></TextBlock>
             <ComboBox Name="elegirAsignatura" Margin="10,82,0,267" HorizontalAlignment="Left" Width="280" Height="21" FontFamily="Times New Roman" SelectionChanged="ElegirCurso_SelectionChanged" Visibility="Collapsed">

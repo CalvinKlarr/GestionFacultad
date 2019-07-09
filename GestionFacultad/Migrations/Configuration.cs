@@ -9,7 +9,7 @@ namespace GestionFacultad.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
             ContextKey = "GestionFacultad.ProgramControl";
         }
 

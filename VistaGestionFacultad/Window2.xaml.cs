@@ -1,6 +1,7 @@
 ﻿using GestionFacultad;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,79 +21,43 @@ namespace VistaGestionFacultad
     /// </summary>
     public partial class Window2 : Window
     {
-        ComboBoxItem[] items = new ComboBoxItem[20];
+        
         ProgramControl db;
         public Window2(ProgramControl programControl)
         {
             db = programControl;
+            this.Closed += Window2_Closed;
             InitializeComponent();
-            items[0] = itemOne;
-            items[1] = itemTwo;
-            items[2] = itemThree;
-            items[3] = itemFour;
-            items[4] = itemFive;
-            items[5] = itemSix;
-            items[6] = itemSeven;
-            items[7] = itemEight;
-            items[8] = itemNine;
-            items[9] = itemTen;
-            items[10] = itemEleven;
-            items[11] = itemTwelve;
-            items[12] = itemThirteen;
-            items[13] = itemFourteen;
-            items[14] = itemFifteen;
-            items[15] = itemSixteen;
-            items[16] = itemSeventeen;
-            items[17] = itemEightteen;
-            items[18] = itemNineteen;
-            items[19] = itemTwenty;
+            
         }
-
+        //Guardar cambios al cerrar, aunque ahora es readonly, era mas para editar en un principio
+        private void Window2_Closed(object sender, EventArgs e)
+        {
+            db.SaveChanges();
+            
+        }
+        //Unused
         private void InscribirAsignatura_Click(object sender, RoutedEventArgs e)
         {
-            elegirAsignaturaTexto.Text = "Elija la asignatura a la que desea inscribirse";
-            elegirAsignaturaTexto.Visibility = Visibility.Visible;
-            elegirAsignatura.Visibility = Visibility.Visible;
-            elegirAula.Visibility = Visibility.Collapsed;
-            for (int i = 8; i < 20; i++)
-            {
-                items[i].Visibility = Visibility.Visible;
-            }
-            itemOne.Content = "Matematicas";
-            itemTwo.Content = "Ingles I";
-            itemThree.Content = "Sistema de procesamiento de datos";
-            itemFour.Content = "Programacion I";
-            itemFive.Content = "Laboratorio de Computacion I";
-            itemSix.Content = "Estadistica";
-            itemSeven.Content = "Ingles II";
-            itemEight.Content = "Arquitectura y sistemas operativos";
-            itemNine.Content = "Programacion II";
-            itemTen.Content = "Laboratorio de Computacion II";
-            itemEleven.Content = "Metodologia de la Investigacion";
-            itemTwelve.Content = "Programacion III";
-            itemThirteen.Content = "Laboratorio de Computacion III";
-            itemFourteen.Content = "Organizacion Contable de la Empresa";
-            itemFifteen.Content = "Organizacion Empresarial";
-            itemSixteen.Content = "Legislacion";
-            itemSeventeen.Content = "Diseño y administracion de base de datos";
-            itemEightteen.Content = "Laboratorio de computacion IV";
-            itemNineteen.Content = "Elementos de la investigacion operativa";
-            itemTwenty.Content = "Metodologia de sistemas";
+            
         }
-
+        //Unused
         private void ElegirCurso_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
+        //Evento al hacer click en ver aulas
         private void VerAulas_Click(object sender, RoutedEventArgs e)
         {
             elegirAsignatura.Visibility = Visibility.Collapsed;
             elegirAsignaturaTexto.Visibility = Visibility.Collapsed;
             elegirAula.Visibility = Visibility.Visible;
-            elegirAula.ItemsSource = db.Aulas.ToList();
+            var dbset = db.Aulas;
+            DbSet<Aula> qry = dbset;
+            qry.Load();
+            elegirAula.ItemsSource = dbset.Local.ToBindingList();
         }
-
+        //Unused
         private void ElegirAula_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 

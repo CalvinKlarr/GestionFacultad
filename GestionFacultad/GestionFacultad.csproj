@@ -77,13 +77,32 @@
     <Compile Include="Aula.cs" />
     <Compile Include="Calificacion.cs" />
     <Compile Include="Curso.cs" />
-    <Compile Include="Migrations\201906172118553_InitialCreate.cs" />
-    <Compile Include="Migrations\201906172118553_InitialCreate.Designer.cs">
-      <DependentUpon>201906172118553_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201906171646146_InitialCreate.cs" />
+    <Compile Include="Migrations\201906171646146_InitialCreate.Designer.cs">
+      <DependentUpon>201906171646146_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906182225120_update.cs" />
+    <Compile Include="Migrations\201906182225120_update.Designer.cs">
+      <DependentUpon>201906182225120_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906182254486_inscriptos.cs" />
+    <Compile Include="Migrations\201906182254486_inscriptos.Designer.cs">
+      <DependentUpon>201906182254486_inscriptos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906190200431_curdivision.cs" />
+    <Compile Include="Migrations\201906190200431_curdivision.Designer.cs">
+      <DependentUpon>201906190200431_curdivision.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906191052412_calif.cs" />
+    <Compile Include="Migrations\201906191052412_calif.Designer.cs">
+      <DependentUpon>201906191052412_calif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201906191124375_hopefullyFinal.cs" />
+    <Compile Include="Migrations\201906191124375_hopefullyFinal.Designer.cs">
+      <DependentUpon>201906191124375_hopefullyFinal.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profesor.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="ProgramControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
@@ -105,8 +124,23 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201906172118553_InitialCreate.resx">
-      <DependentUpon>201906172118553_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201906171646146_InitialCreate.resx">
+      <DependentUpon>201906171646146_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906182225120_update.resx">
+      <DependentUpon>201906182225120_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906182254486_inscriptos.resx">
+      <DependentUpon>201906182254486_inscriptos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906190200431_curdivision.resx">
+      <DependentUpon>201906190200431_curdivision.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906191052412_calif.resx">
+      <DependentUpon>201906191052412_calif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201906191124375_hopefullyFinal.resx">
+      <DependentUpon>201906191124375_hopefullyFinal.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

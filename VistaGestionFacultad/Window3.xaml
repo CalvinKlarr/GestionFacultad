@@ -12,10 +12,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="verProfesores" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,27,10,338" Content="Ver profesores" Click="VerProfesores_Click"/>
-        <Button Name="altaProfesor" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,124,10,241" Content="Alta de un profesor" Height="74" />
-        <Button Name="bajaProfesor" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,224,10,141" Content="Baja de un profesor" Height="74" Click="BajaProfesor_Click"/>
-        <Button Name="modificarProfesor" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,324,10,41" Content="Modificar un profesor" Height="74" Click="ModificarProfesor_Click"/>
+        <Button Name="verProfesores" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,145,10,220" Content="Ver profesores" Click="VerProfesores_Click"/>
         <Grid Grid.Column="1" Name="displayBox3" Background="#FFB3C0C7" Margin="10">
             <TextBlock Name="elegirProfesor" FontFamily="Times New Roman" Margin="10,10,308,366" TextWrapping="Wrap"></TextBlock>
             <ComboBox Name="profesores" Margin="10,143,271,255" SelectionChanged="Profesores_SelectionChanged" Visibility="Collapsed" Height="21">
@@ -41,6 +38,7 @@
                 <ComboBoxItem Name="itemTwenty"></ComboBoxItem>
 
                 </ComboBox>
+            <DataGrid Name="profesoresGrid" Visibility="Collapsed" HorizontalAlignment="Left" Height="154" Margin="10,125,0,0" VerticalAlignment="Top" Width="334"/>
         </Grid>
         
     </Grid>
