@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="VistaGestionFacultad.alumnoControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:VistaGestionFacultad"
+             mc:Ignorable="d" 
+             d:DesignHeight="396" d:DesignWidth="662" Background="#FFB3C0C7">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="24*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="32*"/>
+            <RowDefinition Height="84*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="223*"/>
+            <ColumnDefinition Width="294*"/>
+            <ColumnDefinition Width="145*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,4,0,0" Width="118" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="18" Text="Nombre" Grid.Row="1">
+        </TextBlock>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,1,0,0" Width="118" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="18" Text="Apellido" Grid.Row="3"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,2,0,0" Width="118" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="18" Text="DNI" Grid.Row="5"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,3,0,0" Width="118" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="18" Text="Telefono" Grid.Row="7"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="70,4,0,0" Width="118" RenderTransformOrigin="0.5,0.5" Height="26" FontSize="18" Grid.Row="9"><Run Text="Direccion"/></TextBlock>
+        <TextBox  FontSize="16" Text="Ingrese su nombre aqui.." Name="nombre" Grid.Column="1" Grid.Row="1"/>
+        <TextBox  FontSize="16" Text="Ingrese su apellido aqui.." Name="apellido"  Grid.Column="1" Grid.Row="3"/>
+        <TextBox  FontSize="16" Text="Ingrese su DNI aqui.." Name="dni"  Grid.Column="1" Grid.Row="5"/>
+        <TextBox  FontSize="16" Text="Ingrese su telefono aqui.." Name="telefono"  Grid.Column="1" Grid.Row="7"/>
+        <TextBox  FontSize="16" Text="Ingrese su direccion aqui.." Name="direccion"  Grid.Column="1" Grid.Row="9"/>
+        <Button  BorderThickness="0" HorizontalAlignment="Left" Name="confirmar" Content="Confirmar" VerticalAlignment="Top" Width="134" Margin="70,10,0,0" RenderTransformOrigin="0.5,0.5" Height="35" Click="Confirmar_Click" Grid.Row="10"/>
+
+    </Grid>
+</UserControl>

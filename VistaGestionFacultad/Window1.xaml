@@ -13,28 +13,9 @@
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
 
-        <Button Name="alumnosPorcurso"  VerticalAlignment="Top" Grid.Column="0" Content="Ver alumnos por curso" Margin="10,0,23,0" Height="48" Click="AlumnosPorcurso_Click" Background="#FFB3C0C7" FontFamily="Times New Roman"/>
-        <Button Name="alumnosPorMateria" VerticalAlignment="Center" Grid.Column="0" Content="Ver alumnos por materia" Margin="10,65,23,306" Height="48" Background="#FFB3C0C7" FontFamily="Times New Roman" Click="AlumnosPorMateria_Click"/>
-        <Button Name="verCalificaciones" VerticalAlignment="Center" Grid.Column="0" Content="Ver calificaciones" Height="48" Margin="10,131,23,240" Background="#FFB3C0C7" FontFamily="Times New Roman" Click="VerCalificaciones_Click"/>
-        <Button Name="modificarAlumno" VerticalAlignment="Bottom" Grid.Column="0" Content="Modificar la entrada de un alumno" Height="48" Margin="10,0,23,166" Background="#FFB3C0C7" FontFamily="Times New Roman" Click="ModificarAlumno_Click" />
-
-        <Grid Name="displayBox" Grid.Column="1" Margin="0,0,10,23" Background="#FFB3C0C7">
-            <TextBlock x:Name="elegirCursoTexto" Margin="10,10,0,327" HorizontalAlignment="Left" Width="270" FontFamily="Times New Roman" FontSize="18" TextWrapping="Wrap" Text="" Visibility="Collapsed"/>
-            <ComboBox Name="elegirAsig" Margin="10,122,0,246" HorizontalAlignment="Left" Width="280" Height="21" FontFamily="Times New Roman" SelectionChanged="ElegirCurso_SelectionChanged" Visibility="Collapsed" ItemsSource="{Binding Asignaturas}" DisplayMemberPath="Asign">
-
-
-
-
-
-            </ComboBox>
-            <TextBox x:Name="legajoAlumno" Margin="10,69,0,299" Height="28" Width="150" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left" Visibility="Collapsed"/>
-            <Button Name="confirmButton" Margin="36,337,520,24" Background="#FF4881A2" Visibility="Collapsed" FontFamily="Times New Roman" FontSize="14" Click="ConfirmButton_Click" />
-            <DataGrid Name="alumnosGrid" HorizontalAlignment="Left" Height="126" Margin="10,190,0,0" VerticalAlignment="Top" Width="411" Visibility="Collapsed" IsReadOnly="False" TargetUpdated="AlumnosGrid_TargetUpdated">
-            </DataGrid>
-            <ComboBox Name="cursoBox" ItemsSource="{Binding Cursos}" DisplayMemberPath="CurDivision" HorizontalAlignment="Left" VerticalAlignment="Top" Width="187" Margin="10,75,0,0" Visibility="Collapsed" SelectionChanged="CursoBox_SelectionChanged"/>
-
-
-        </Grid>
+        <Grid Name="displayBox" Grid.Column="1" Margin="0,0,10,23" Background="#FFB3C0C7"/>
+        <Button Content="Inscribir" FontSize="18" Name="inscribir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,10,0,0" Height="46" Click="Inscribir_Click"/>
+        <Button Name="ver" Content="Ver" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,77,0,0" Height="47" Click="Button_Click"/>
 
 
     </Grid>

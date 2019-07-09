@@ -322,21 +322,21 @@ namespace VistaGestionFacultad
 
                     //ALUMNOS
 
-                    var alum1 = new Alumno("Peter Benjamin", "Parker", 41560550, 710026, "H. Yrigoyen 425", 20940);
-                    var alum2 = new Alumno("Lukas", "Cage", 41660550, 543419, "Catamarca 225", 20941);
-                    var alum3 = new Alumno("Benjamin", "Reilly", 41560750, 526681, "Mitre 145", 20942);
-                    var alum4 = new Alumno("Miles", "Morales", 42560850, 712236, "Formosa 369", 20943);
-                    var alum5 = new Alumno("Calvo", "Calvin", 41560452, 241267, "Liniers 749", 20944);
-                    var alum6 = new Alumno("Ben", "Tennyson", 41572050, 900739, "Av Lavalle 752", 20945);
-                    var alum7 = new Alumno("Gwen", "Tennyson", 41560820, 510783, "Av Lavalle 750", 20946);
-                    var alum8 = new Alumno("Mary Jane", "Watson", 41460850, 164373, "Cervantes 105", 20947);
-                    var alum9 = new Alumno("Harry", "Osborn", 40960550, 658669, "Av. Sarmiento 457", 20948);
-                    var alum10 = new Alumno("Eugene", "Thompson", 39966950, 687933, "Carlos Pellegrini 862", 20949);
-                    var alum11 = new Alumno("Liz", "Allan", 41580740, 164371, "Av San Martin 372", 20950);
-                    var alum12 = new Alumno("Eddie", "Brock", 39560852, 094858, "Arturo Illia 744", 20951);
-                    var alum13 = new Alumno("Josias", "Urutti", 41760750, 610026, "H. Yrigoyen 442", 23949);
-                    var alum14 = new Alumno("Niko", "Bellic", 40420420, 659989, "Av. Laprida 699", 20952);
-                    var alum15 = new Alumno("Carl", "Johnson", 40696969, 771267, "Colón 425", 20953);
+                    var alum1 = new Alumno("Peter Benjamin", "Parker", 41560550, 710026, "H. Yrigoyen 425");
+                    var alum2 = new Alumno("Lukas", "Cage", 41660550, 543419, "Catamarca 225");
+                    var alum3 = new Alumno("Benjamin", "Reilly", 41560750, 526681, "Mitre 145");
+                    var alum4 = new Alumno("Miles", "Morales", 42560850, 712236, "Formosa 369");
+                    var alum5 = new Alumno("Calvo", "Calvin", 41560452, 241267, "Liniers 749");
+                    var alum6 = new Alumno("Ben", "Tennyson", 41572050, 900739, "Av Lavalle 752");
+                    var alum7 = new Alumno("Gwen", "Tennyson", 41560820, 510783, "Av Lavalle 750");
+                    var alum8 = new Alumno("Mary Jane", "Watson", 41460850, 164373, "Cervantes 105");
+                    var alum9 = new Alumno("Harry", "Osborn", 40960550, 658669, "Av. Sarmiento 457");
+                    var alum10 = new Alumno("Eugene", "Thompson", 39966950, 687933, "Carlos Pellegrini 862");
+                    var alum11 = new Alumno("Liz", "Allan", 41580740, 164371, "Av San Martin 372");
+                    var alum12 = new Alumno("Eddie", "Brock", 39560852, 094858, "Arturo Illia 744");
+                    var alum13 = new Alumno("Josias", "Urutti", 41760750, 610026, "H. Yrigoyen 442");
+                    var alum14 = new Alumno("Niko", "Bellic", 40420420, 659989, "Av. Laprida 699");
+                    var alum15 = new Alumno("Carl", "Johnson", 40696969, 771267, "Colón 425");
 
 
                     db.Alumnos.Add(alum1);
