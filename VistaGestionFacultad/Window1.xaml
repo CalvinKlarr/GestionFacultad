@@ -14,8 +14,9 @@
         </Grid.ColumnDefinitions>
 
         <Grid Name="displayBox" Grid.Column="1" Margin="0,0,10,23" Background="#FFB3C0C7"/>
-        <Button Content="Inscribir" FontSize="18" Name="inscribir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,10,0,0" Height="46" Click="Inscribir_Click"/>
+        <Button Content="Alta" FontSize="18" Name="alta" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,10,0,0" Height="46" Click="Inscribir_Click"/>
         <Button Name="ver" Content="Ver" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,77,0,0" Height="47" Click="Button_Click"/>
+        <Button Content="Inscribir" FontSize="18" Name="inscribir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,146,0,0" Height="44" Click="Inscribir_Click_1"/>
 
 
     </Grid>

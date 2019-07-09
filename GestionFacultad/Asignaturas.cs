@@ -26,5 +26,10 @@ namespace GestionFacultad
 
           } } */
 
+        public override string ToString()
+        {
+            return Asign;
+        }
+
     }
 }

@@ -23,7 +23,10 @@ namespace GestionFacultad
             
 
         }
-
+        public override string ToString()
+        {
+            return nombre +" "+ apellido;
+        }
         public Alumno()
         {
 

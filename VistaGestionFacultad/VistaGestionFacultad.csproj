@@ -68,6 +68,9 @@
     <Compile Include="alumnoControl.xaml.cs">
       <DependentUpon>alumnoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="inscribirControl.xaml.cs">
+      <DependentUpon>inscribirControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="viewAlumnoControl.xaml.cs">
       <DependentUpon>viewAlumnoControl.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="alumnoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="inscribirControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

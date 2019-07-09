@@ -27,6 +27,7 @@ namespace VistaGestionFacultad
         ProgramControl db;
         alumnoControl alcont;
         viewAlumnoControl valcont;
+        inscribirControl incont;
         //Constructor, se instancia el contexto de la DB, y se agrega un evento al cerrarse la ventana
         public Window1(ProgramControl programControl)
         {
@@ -73,6 +74,21 @@ namespace VistaGestionFacultad
             }
             
 
+        }
+
+        private void Inscribir_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(displayBox.Children.Count == 0)
+            {
+                incont = new inscribirControl();
+                displayBox.Children.Add(incont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                incont = new inscribirControl();
+                displayBox.Children.Add(incont);
+            }
         }
     }
 }
