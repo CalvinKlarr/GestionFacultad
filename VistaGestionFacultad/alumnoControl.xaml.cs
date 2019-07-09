@@ -47,7 +47,7 @@ namespace VistaGestionFacultad
             {
                 MessageBox.Show("Ingrese un DNI valido!");
             }
-            if (telefono.Text == "Ingrese su telefono aqui.." || int.TryParse(telefono.Text, out testint))
+            if (telefono.Text == "Ingrese su telefono aqui.." || !int.TryParse(telefono.Text, out testint))
             {
                 MessageBox.Show("Ingrese un telefono valido!");
             }
