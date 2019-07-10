@@ -36,5 +36,10 @@ namespace GestionFacultad
             this._materias = materias = new List<string>();
 
         }
+
+        public override string ToString()
+        {
+            return nombre + " " + apellido;
+        }
     }
 }
