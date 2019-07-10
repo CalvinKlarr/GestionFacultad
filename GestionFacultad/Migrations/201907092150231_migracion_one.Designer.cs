@@ -7,13 +7,13 @@ namespace GestionFacultad.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class migracion_one : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migracion_one));
         
         string IMigrationMetadata.Id
         {
-            get { return "201906171646146_InitialCreate"; }
+            get { return "201907092150231_migracion_one"; }
         }
         
         string IMigrationMetadata.Source

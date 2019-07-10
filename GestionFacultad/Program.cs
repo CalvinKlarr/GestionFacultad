@@ -316,7 +316,7 @@ namespace GestionFacultad
                     var p8 = new Profesor("Bill", "Foster", 20151314, 610026, "Frondizi 365", materias);
                     var p9 = new Profesor("Steve", "Rogers", 10236250, 610026, "Entre Rios 942", materias);
                     var p10 = new Profesor("Hank", "McCoy", 24740650, 610026, "José Hernandez 669", materias);
-                    var p11= new Profesor()
+                    //var p11= new Profesor()
 
                     db.Profes.Add(p1);
                     db.Profes.Add(p2);

@@ -10,7 +10,6 @@ namespace GestionFacultad.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "GestionFacultad.ProgramControl";
         }
 
         protected override void Seed(GestionFacultad.ProgramControl context)

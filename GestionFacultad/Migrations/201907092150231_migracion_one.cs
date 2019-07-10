@@ -3,7 +3,7 @@ namespace GestionFacultad.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class migracion_one : DbMigration
     {
         public override void Up()
         {
@@ -11,20 +11,22 @@ namespace GestionFacultad.Migrations
                 "dbo.Alumnoes",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        id = c.Int(nullable: false, identity: true),
+                        StringsAsString = c.String(nullable: false),
                         Nombre = c.String(),
                         Apellido = c.String(),
                         Dni = c.Int(nullable: false),
                         Tel = c.Int(nullable: false),
                         Direc = c.String(),
                     })
-                .PrimaryKey(t => t.Id);
+                .PrimaryKey(t => t.id);
             
             CreateTable(
                 "dbo.Asignaturas",
                 c => new
                     {
                         Asign = c.String(nullable: false, maxLength: 128),
+                        StringsAsString = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.Asign);
             
@@ -41,10 +43,39 @@ namespace GestionFacultad.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "dbo.Calificacions",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        Parcial_1 = c.Int(nullable: false),
+                        Parcial_2 = c.Int(nullable: false),
+                        Parcial_3 = c.Int(nullable: false),
+                        Recup_1 = c.Int(nullable: false),
+                        Recup_2 = c.Int(nullable: false),
+                        Legajo = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.id);
+            
+            CreateTable(
+                "dbo.Cursoes",
+                c => new
+                    {
+                        id = c.Int(nullable: false, identity: true),
+                        Cur = c.String(),
+                        Division = c.String(),
+                        CurDivision = c.String(),
+                        aula_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.Aulas", t => t.aula_Id)
+                .Index(t => t.aula_Id);
+            
+            CreateTable(
                 "dbo.Profesors",
                 c => new
                     {
                         Dni_ID = c.Int(nullable: false, identity: true),
+                        StringsAsString = c.String(nullable: false),
                         Nombre = c.String(),
                         Apellido = c.String(),
                         Dni = c.Int(nullable: false),
@@ -57,7 +88,11 @@ namespace GestionFacultad.Migrations
         
         public override void Down()
         {
+            DropForeignKey("dbo.Cursoes", "aula_Id", "dbo.Aulas");
+            DropIndex("dbo.Cursoes", new[] { "aula_Id" });
             DropTable("dbo.Profesors");
+            DropTable("dbo.Cursoes");
+            DropTable("dbo.Calificacions");
             DropTable("dbo.Aulas");
             DropTable("dbo.Asignaturas");
             DropTable("dbo.Alumnoes");

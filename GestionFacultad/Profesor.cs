@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,11 +11,27 @@ namespace GestionFacultad
     public class Profesor: Usuario
     {
 
-        public List<string> materias;
-        
-        private int dni_ID;
         [Key]
-        public int Dni_ID { get { return dni_ID; } set { dni_ID = value; } }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int dni_ID { get; set; }
+       // public int Dni_ID { get { return dni_ID; } set { dni_ID = value; } }
+
+        private List<String> _materias{get; set;}
+        public List<string> materias{ get { return _materias; } set { _materias = value; } }
+
+        [Required]
+        public string StringsAsString
+        {
+        get { return String.Join(",", _materias); }
+        set { _materias = value.Split(',').ToList(); }
+        }
+
+
+
+
+    
+
+
         public Profesor()
         {
 
@@ -32,3 +49,5 @@ namespace GestionFacultad
         }
     }
 }
+
+
