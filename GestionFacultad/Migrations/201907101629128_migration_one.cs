@@ -3,7 +3,7 @@ namespace GestionFacultad.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class migracion_one : DbMigration
+    public partial class migration_one : DbMigration
     {
         public override void Up()
         {
@@ -11,22 +11,23 @@ namespace GestionFacultad.Migrations
                 "dbo.Alumnoes",
                 c => new
                     {
-                        id = c.Int(nullable: false, identity: true),
-                        StringsAsString = c.String(nullable: false),
+                        Id = c.Int(nullable: false, identity: true),
+                        aprobadasDB = c.String(),
                         Nombre = c.String(),
                         Apellido = c.String(),
                         Dni = c.Int(nullable: false),
                         Tel = c.Int(nullable: false),
                         Direc = c.String(),
                     })
-                .PrimaryKey(t => t.id);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.Asignaturas",
                 c => new
                     {
                         Asign = c.String(nullable: false, maxLength: 128),
-                        StringsAsString = c.String(nullable: false),
+                        correlativasDB = c.String(),
+                        inscriptosDB = c.String(),
                     })
                 .PrimaryKey(t => t.Asign);
             
@@ -61,6 +62,8 @@ namespace GestionFacultad.Migrations
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),
+                        asignaturasDB = c.String(),
+                        alumnoIDDB = c.String(),
                         Cur = c.String(),
                         Division = c.String(),
                         CurDivision = c.String(),
@@ -75,7 +78,7 @@ namespace GestionFacultad.Migrations
                 c => new
                     {
                         Dni_ID = c.Int(nullable: false, identity: true),
-                        StringsAsString = c.String(nullable: false),
+                        materiasDB = c.String(),
                         Nombre = c.String(),
                         Apellido = c.String(),
                         Dni = c.Int(nullable: false),

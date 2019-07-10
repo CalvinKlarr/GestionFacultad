@@ -7,13 +7,13 @@ namespace GestionFacultad.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class alumnomod : IMigrationMetadata
+    public sealed partial class migration_one : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(alumnomod));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(migration_one));
         
         string IMigrationMetadata.Id
         {
-            get { return "201907092145000_alumnomod"; }
+            get { return "201907101629128_migration_one"; }
         }
         
         string IMigrationMetadata.Source

@@ -77,40 +77,13 @@
     <Compile Include="Aula.cs" />
     <Compile Include="Calificacion.cs" />
     <Compile Include="Curso.cs" />
-    <Compile Include="Migrations\201907092150231_migracion_one.cs" />
-    <Compile Include="Migrations\201907092150231_migracion_one.Designer.cs">
-      <DependentUpon>201907092150231_migracion_one.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092156453_migration_two.cs" />
-    <Compile Include="Migrations\201907092156453_migration_two.Designer.cs">
-      <DependentUpon>201907092156453_migration_two.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092145000_alumnomod.cs" />
-    <Compile Include="Migrations\201907092145000_alumnomod.Designer.cs">
-      <DependentUpon>201907092145000_alumnomod.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092204039_str.cs" />
-    <Compile Include="Migrations\201907092204039_str.Designer.cs">
-      <DependentUpon>201907092204039_str.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092230376_test.cs" />
-    <Compile Include="Migrations\201907092230376_test.Designer.cs">
-      <DependentUpon>201907092230376_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092254391_test2.cs" />
-    <Compile Include="Migrations\201907092254391_test2.Designer.cs">
-      <DependentUpon>201907092254391_test2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092335354_fixingthisshit.cs" />
-    <Compile Include="Migrations\201907092335354_fixingthisshit.Designer.cs">
-      <DependentUpon>201907092335354_fixingthisshit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201907092352464_finally.cs" />
-    <Compile Include="Migrations\201907092352464_finally.Designer.cs">
-      <DependentUpon>201907092352464_finally.cs</DependentUpon>
+    <Compile Include="Migrations\201907101629128_migration_one.cs" />
+    <Compile Include="Migrations\201907101629128_migration_one.Designer.cs">
+      <DependentUpon>201907101629128_migration_one.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Profesor.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="ProgramControl.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Usuario.cs" />
@@ -132,29 +105,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201907092150231_migracion_one.resx">
-      <DependentUpon>201907092150231_migracion_one.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092156453_migration_two.resx">
-      <DependentUpon>201907092156453_migration_two.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092145000_alumnomod.resx">
-      <DependentUpon>201907092145000_alumnomod.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092204039_str.resx">
-      <DependentUpon>201907092204039_str.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092230376_test.resx">
-      <DependentUpon>201907092230376_test.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092254391_test2.resx">
-      <DependentUpon>201907092254391_test2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092335354_fixingthisshit.resx">
-      <DependentUpon>201907092335354_fixingthisshit.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201907092352464_finally.resx">
-      <DependentUpon>201907092352464_finally.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201907101629128_migration_one.resx">
+      <DependentUpon>201907101629128_migration_one.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

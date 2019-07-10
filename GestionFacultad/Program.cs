@@ -234,41 +234,116 @@ namespace GestionFacultad
                     c1.Cur = "1er Cuatrimestre";
                     c1.Division = "Turno Mañana";
                     c1.aula = a1;
+                    c1.asignaturas.Add("Inglés I");
+                    c1.asignaturas.Add("Laboratorio de Computación I");
+                    c1.asignaturas.Add("Matemáticas");
+                    c1.asignaturas.Add("Programación I");
+                    c1.asignaturas.Add("Sistemas de Procesamiento de Datos");
+
+
                     c2.Cur = "2do Cuatrimestre";
                     c2.Division = "Turno Mañana";
                     c2.aula = a2;
+                    c2.asignaturas.Add("Arquitectura y Sistemas Operativos");
+                    c2.asignaturas.Add("Estadística");
+                    c2.asignaturas.Add("Inglés II");
+                    c2.asignaturas.Add("Laboratorio de Computación II");
+                    c2.asignaturas.Add("Metodología de la Investigación");
+                    c2.asignaturas.Add("Programación II");
+
+
                     c3.Cur = "3ro Cuatrimestre";
                     c3.Division = "Turno Mañana";
                     c3.aula = a3;
+                    c3.asignaturas.Add("Organización Empresarial");
+                    c3.asignaturas.Add("Organización Contable de la Empresa");
+                    c3.asignaturas.Add("Laboratorio de Computación III");
+                    c3.asignaturas.Add("Programación III");
+                    c3.asignaturas.Add("Legislación");
+
+
                     c4.Cur = "4to Cuatrimestre";
                     c4.Division = "Turno Mañana";
                     c4.aula = a4;
+                    c4.asignaturas.Add("Elementos de Investigación Operativa");
+                    c4.asignaturas.Add("Diseño y Administración de Bases de Datos");
+                    c4.asignaturas.Add("Laboratorio de Computación IV");
+                    c4.asignaturas.Add("Metodología de Sistemas I");
 
                     c5.Cur = "1er Cuatrimestre";
                     c5.Division = "Turno Tarde";
                     c5.aula = a5;
+                    c5.asignaturas.Add("Inglés I");
+                    c5.asignaturas.Add("Laboratorio de Computación I");
+                    c5.asignaturas.Add("Matemáticas");
+                    c5.asignaturas.Add("Programación I");
+                    c5.asignaturas.Add("Sistemas de Procesamiento de Datos");
+
+
                     c6.Cur = "2do Cuatrimestre";
                     c6.Division = "Turno Tarde";
                     c6.aula = a6;
+                    c6.asignaturas.Add("Arquitectura y Sistemas Operativos");
+                    c6.asignaturas.Add("Estadística");
+                    c6.asignaturas.Add("Inglés II");
+                    c6.asignaturas.Add("Laboratorio de Computación II");
+                    c6.asignaturas.Add("Metodología de la Investigación");
+                    c6.asignaturas.Add("Programación II");
+
                     c7.Cur = "3ro Cuatrimestre";
                     c7.Division = "Turno Tarde";
                     c7.aula = a7;
+                    c7.asignaturas.Add("Organización Empresarial");
+                    c7.asignaturas.Add("Organización Contable de la Empresa");
+                    c7.asignaturas.Add("Laboratorio de Computación III");
+                    c7.asignaturas.Add("Programación III");
+                    c7.asignaturas.Add("Legislación");
+
                     c8.Cur = "4to Cuatrimestre";
                     c8.Division = "Turno Tarde";
                     c8.aula = a8;
+                    c8.asignaturas.Add("Elementos de Investigación Operativa");
+                    c8.asignaturas.Add("Diseño y Administración de Bases de Datos");
+                    c8.asignaturas.Add("Laboratorio de Computación IV");
+                    c8.asignaturas.Add("Metodología de Sistemas I");
+
 
                     c9.Cur = "1er Cuatrimestre";
                     c9.Division = "Turno Noche";
                     c9.aula = a1;
+                    c9.asignaturas.Add("Inglés I");
+                    c9.asignaturas.Add("Laboratorio de Computación I");
+                    c9.asignaturas.Add("Matemáticas");
+                    c9.asignaturas.Add("Programación I");
+                    c9.asignaturas.Add("Sistemas de Procesamiento de Datos");
+
                     c10.Cur = "2do Cuatrimestre";
                     c10.Division = "Turno Noche";
                     c10.aula = a2;
+                    c10.asignaturas.Add("Arquitectura y Sistemas Operativos");
+                    c10.asignaturas.Add("Estadística");
+                    c10.asignaturas.Add("Inglés II");
+                    c10.asignaturas.Add("Laboratorio de Computación II");
+                    c10.asignaturas.Add("Metodología de la Investigación");
+                    c10.asignaturas.Add("Programación II");
+
                     c11.Cur = "3ro Cuatrimestre";
                     c11.Division = "Turno Noche";
                     c11.aula = a3;
+                    c11.asignaturas.Add("Organización Empresarial");
+                    c11.asignaturas.Add("Organización Contable de la Empresa");
+                    c11.asignaturas.Add("Laboratorio de Computación III");
+                    c11.asignaturas.Add("Programación III");
+                    c11.asignaturas.Add("Legislación");
+
                     c12.Cur = "4to Cuatrimestre";
                     c12.Division = "Turno Noche";
                     c12.aula = a4;
+                    c12.asignaturas.Add("Elementos de Investigación Operativa");
+                    c12.asignaturas.Add("Diseño y Administración de Bases de Datos");
+                    c12.asignaturas.Add("Laboratorio de Computación IV");
+                    c12.asignaturas.Add("Metodología de Sistemas I");
+
 
                     db.Cursos.Add(c1);
                     db.Cursos.Add(c2);
@@ -350,21 +425,21 @@ namespace GestionFacultad
 
                     //ALUMNOS
 
-                    var alum1 = new Alumno("Peter Benjamin", "Parker", 41560550, 710026, "H. Yrigoyen 425", 20940);
-                    var alum2 = new Alumno("Lukas", "Cage", 41660550, 543419, "Catamarca 225", 20941);
-                    var alum3 = new Alumno("Benjamin", "Reilly", 41560750, 526681, "Mitre 145", 20942);
-                    var alum4 = new Alumno("Miles", "Morales", 42560850, 712236, "Formosa 369", 20943);
-                    var alum5 = new Alumno("Calvo", "Calvin", 41560452, 241267, "Liniers 749", 20944);
-                    var alum6 = new Alumno("Ben", "Tennyson", 41572050, 900739, "Av Lavalle 752", 20945);
-                    var alum7 = new Alumno("Gwen", "Tennyson", 41560820, 510783, "Av Lavalle 750", 20946);
-                    var alum8 = new Alumno("Mary Jane", "Watson", 41460850, 164373, "Cervantes 105", 20947);
-                    var alum9 = new Alumno("Harry", "Osborn", 40960550, 658669, "Av. Sarmiento 457", 20948);
-                    var alum10 = new Alumno("Eugene", "Thompson", 39966950, 687933, "Carlos Pellegrini 862", 20949);
-                    var alum11 = new Alumno("Liz", "Allan", 41580740, 164371, "Av San Martin 372", 20950);
-                    var alum12 = new Alumno("Eddie", "Brock", 39560852, 094858, "Arturo Illia 744", 20951);
-                    var alum13 = new Alumno("Josias", "Urutti", 41760750, 610026, "H. Yrigoyen 442", 23949);
-                    var alum14 = new Alumno("Niko", "Bellic", 40420420, 659989, "Av. Laprida 699", 20952);
-                    var alum15 = new Alumno("Carl", "Johnson", 40696969, 771267, "Colón 425", 20953);
+                    var alum1 = new Alumno("Peter Benjamin", "Parker", 41560550, 710026, "H. Yrigoyen 425");
+                    var alum2 = new Alumno("Lukas", "Cage", 41660550, 543419, "Catamarca 225");
+                    var alum3 = new Alumno("Benjamin", "Reilly", 41560750, 526681, "Mitre 145");
+                    var alum4 = new Alumno("Miles", "Morales", 42560850, 712236, "Formosa 369");
+                    var alum5 = new Alumno("Calvo", "Calvin", 41560452, 241267, "Liniers 749");
+                    var alum6 = new Alumno("Ben", "Tennyson", 41572050, 900739, "Av Lavalle 752");
+                    var alum7 = new Alumno("Gwen", "Tennyson", 41560820, 510783, "Av Lavalle 750");
+                    var alum8 = new Alumno("Mary Jane", "Watson", 41460850, 164373, "Cervantes 105");
+                    var alum9 = new Alumno("Harry", "Osborn", 40960550, 658669, "Av. Sarmiento 457");
+                    var alum10 = new Alumno("Eugene", "Thompson", 39966950, 687933, "Carlos Pellegrini 862");
+                    var alum11 = new Alumno("Liz", "Allan", 41580740, 164371, "Av San Martin 372");
+                    var alum12 = new Alumno("Eddie", "Brock", 39560852, 094858, "Arturo Illia 744");
+                    var alum13 = new Alumno("Josias", "Urutti", 41760750, 610026, "H. Yrigoyen 442");
+                    var alum14 = new Alumno("Niko", "Bellic", 40420420, 659989, "Av. Laprida 699");
+                    var alum15 = new Alumno("Carl", "Johnson", 40696969, 771267, "Colón 425");
 
 
                     db.Alumnos.Add(alum1);
