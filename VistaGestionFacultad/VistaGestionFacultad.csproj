@@ -74,8 +74,17 @@
     <Compile Include="cursosControl.xaml.cs">
       <DependentUpon>cursosControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="deleteControl.xaml.cs">
+      <DependentUpon>deleteControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="inscribirControl.xaml.cs">
       <DependentUpon>inscribirControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modifyAlumnos.xaml.cs">
+      <DependentUpon>modifyAlumnos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modifyControl.xaml.cs">
+      <DependentUpon>modifyControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewAlumnoControl.xaml.cs">
       <DependentUpon>viewAlumnoControl.xaml</DependentUpon>
@@ -97,6 +106,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="deleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -114,6 +127,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="inscribirControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modifyAlumnos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modifyControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

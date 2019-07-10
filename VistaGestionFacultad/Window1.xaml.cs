@@ -30,6 +30,8 @@ namespace VistaGestionFacultad
         inscribirControl incont;
         asignaturasControl ascont;
         cursosControl cucont;
+        modifyControl mocont;
+        deleteControl decont;
         //Constructor, se instancia el contexto de la DB, y se agrega un evento al cerrarse la ventana
         public Window1(ProgramControl programControl)
         {
@@ -128,6 +130,37 @@ namespace VistaGestionFacultad
                 cucont = new cursosControl();
                 displayBox.Children.Add(cucont);
             }
+        }
+
+        private void Modificar_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox.Children.Count == 0)
+            {
+                mocont = new modifyControl();
+                displayBox.Children.Add(mocont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                mocont = new modifyControl();
+                displayBox.Children.Add(mocont);
+            }
+        }
+
+        private void Borrar_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox.Children.Count == 0)
+            {
+                decont = new deleteControl();
+                displayBox.Children.Add(decont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                decont = new deleteControl();
+                displayBox.Children.Add(decont);
+            }
+
         }
     }
 }
