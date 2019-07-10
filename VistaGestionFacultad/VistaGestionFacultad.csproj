@@ -68,6 +68,12 @@
     <Compile Include="alumnoControl.xaml.cs">
       <DependentUpon>alumnoControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="asignaturasControl.xaml.cs">
+      <DependentUpon>asignaturasControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cursosControl.xaml.cs">
+      <DependentUpon>cursosControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="inscribirControl.xaml.cs">
       <DependentUpon>inscribirControl.xaml</DependentUpon>
     </Compile>
@@ -83,6 +89,14 @@
     <Compile Include="Window3.xaml.cs">
       <DependentUpon>Window3.xaml</DependentUpon>
     </Compile>
+    <Page Include="asignaturasControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cursosControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -152,6 +166,9 @@
       <Project>{2528891c-1d4a-4b68-9dc4-035a032d8290}</Project>
       <Name>GestionFacultad</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="X.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

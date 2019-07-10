@@ -21,9 +21,9 @@
             <RowDefinition Height="84*"/>
         </Grid.RowDefinitions>
         <TextBlock FontSize="17" TextWrapping="Wrap" Text="Elija el alumno" Grid.Row="1"/>
-        <ComboBox   Name="alumnos" Grid.Column="1"  Grid.Row="1"/>
+        <ComboBox   Name="alumnos" Grid.Column="1"  Grid.Row="1" SelectionChanged="Alumnos_SelectionChanged"/>
         <TextBlock  TextWrapping="Wrap" Text="Elija la asignatura" FontSize="18" Grid.Row="3"/>
-        <ComboBox   x:Name="asignaturas" Grid.Column="1"  Grid.Row="3" DropDownOpened="Asignaturas_DropDownOpened"/>
+        <ComboBox   x:Name="asignaturas" Grid.Column="1"  Grid.Row="3" DropDownOpened="Asignaturas_DropDownOpened" />
         <Button Name="confirm" Content="Confirmar" Grid.Column="1" Grid.Row="5" Margin="0,0,171,0" Click="Confirm_Click"/>
 
     </Grid>

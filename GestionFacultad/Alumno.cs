@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,14 @@ namespace GestionFacultad
     {
 
         private int id;
-        public List<string> aprobadas = new List<string>();
+        private List<string> _aprobadas = new List<string>();
+        public List<string> aprobadas { get { return _aprobadas; } set { _aprobadas = value; } }
+        
+        public string aprobadasDB
+        {
+            get { return String.Join(",", _aprobadas); }
+            set { _aprobadas = value.Split(',').ToList(); }
+        }
         public int Id { get { return id; } set { id = value; } }
 
         public Alumno(string name, string lname, int doc, int phone, string direcc)

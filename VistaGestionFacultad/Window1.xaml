@@ -5,18 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VistaGestionFacultad"
         mc:Ignorable="d"
-        Title="Alumno" Height="470" Width="1000" Background="#FF4881A2">
+        Title="Alumno" Height="470" Width="1000" BorderThickness="0" WindowStyle="None" Background="#FF4881A2">
     <Grid RenderTransformOrigin="0.499,0.5" Margin="0,20,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="320"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="645*"/>
+            <ColumnDefinition Width="14*"/>
+            <ColumnDefinition Width="14*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Name="displayBox" Grid.Column="1" Margin="0,0,10,23" Background="#FFB3C0C7"/>
+        <Grid Name="displayBox" Grid.Column="1" Margin="0,0,10,23" Background="#FFB3C0C7" Grid.ColumnSpan="3"/>
         <Button Content="Alta" FontSize="18" Name="alta" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,10,0,0" Height="46" Click="Inscribir_Click"/>
         <Button Name="ver" Content="Ver" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,77,0,0" Height="47" Click="Button_Click"/>
         <Button Content="Inscribir" FontSize="18" Name="inscribir" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,146,0,0" Height="44" Click="Inscribir_Click_1"/>
+        <Button Content="Ver por asignatura" FontSize="18" x:Name="verAsig" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,212,0,0" Height="44" Click="VerAsig_Click"/>
+        <Button  HorizontalAlignment="Left" Click="Button_Click_1" BorderThickness="0" VerticalAlignment="Top" Width="30" Grid.Column="1" Margin="632,-20,0,0" Height="20" Grid.ColumnSpan="3" Background="{x:Null}">
+            <Button.Content>
+                <Image Source="X.png"/>
+            </Button.Content>
+        </Button>
+        <Button Content="Ver por curso" FontSize="18" x:Name="verCurso" HorizontalAlignment="Left" VerticalAlignment="Top" Width="300" Margin="10,278,0,0" Height="44" Click="VerCurso_Click"/>
 
 
     </Grid>

@@ -23,10 +23,11 @@ namespace VistaGestionFacultad
             AppWindow = this;
             this.Closed += MainWindow_Closed;
             //ASIGNATURAS
-
-            using (var db = new ProgramControl())
+            
+            
+            using (var dba = new ProgramControl())
             {
-                bool isAsigEmpty = !db.Asigns.Any();
+                bool isAsigEmpty = !dba.Asigns.Any();
                 var a1 = new Aula();
                 var a2 = new Aula();
                 var a3 = new Aula();
@@ -35,9 +36,34 @@ namespace VistaGestionFacultad
                 var a6 = new Aula();
                 var a7 = new Aula();
                 var a8 = new Aula();
+                /*
+                foreach(var al in dba.Alumnos)
+                {
+                    dba.Alumnos.Remove(al);
+                }
+                foreach (var asi in dba.Asigns)
+                {
+                    dba.Asigns.Remove(asi);
+                }
+                foreach (var au in dba.Aulas)
+                {
+                    dba.Aulas.Remove(au);
+                }
+                foreach (var cur in dba.Cursos)
+                {
+                    dba.Cursos.Remove(cur);
+                }
+                foreach (var prof in dba.Profes)
+                {
+                    dba.Profes.Remove(prof);
+                }
+                dba.SaveChanges();
+                */
 
                 if (isAsigEmpty)
                 {
+                    
+                    
 
                     var a = new Asignaturas { Asign = "Arquitectura y Sistemas Operativos" };
                     List<string> corr = new List<string>();
@@ -48,25 +74,31 @@ namespace VistaGestionFacultad
                     corr_estad.Add("Matemáticas");
                     b.correlativas = corr_estad;
                     var c = new Asignaturas { Asign = "Inglés I" };
+                    
                     var d = new Asignaturas { Asign = "Inglés II" };
                     List<string> corr_inglesII = new List<string>();
                     corr_inglesII.Add("Inglés I");
                     d.correlativas = corr_inglesII;
                     var e = new Asignaturas { Asign = "Laboratorio de Computación I" };
+                    
                     var f = new Asignaturas { Asign = "Laboratorio de Computación II" };
                     List<string> corr_labii = new List<string>();
                     corr_labii.Add("Laboratorio de Computación I");
                     corr_labii.Add("Programación I");
                     f.correlativas = corr_labii;
                     var g = new Asignaturas { Asign = "Matemáticas" };
+                    
                     var h = new Asignaturas { Asign = "Metodologia de la investigación" };
+                    
                     var i = new Asignaturas { Asign = "Programación I" };
+                    
                     var j = new Asignaturas { Asign = "Programación II" };
                     List<string> corr_progii = new List<string>();
                     corr_progii.Add("Laboratorio de Computación I");
                     corr_progii.Add("Programación I");
                     j.correlativas = corr_progii;
                     var k = new Asignaturas { Asign = "Sistemas de Procesamiento de Datos" };
+                    
                     var l = new Asignaturas { Asign = "Laboratorio de Computación III" };
                     List<string> corr_labiii = new List<string>();
                     corr_labiii.Add("Laboratorio de Computación II");
@@ -90,6 +122,7 @@ namespace VistaGestionFacultad
                     corr_elem.Add("Estadistica");
                     p.correlativas = corr_elem;
                     var q = new Asignaturas { Asign = "Legislación" };
+                    
                     var r = new Asignaturas { Asign = "Diseño y Administración de Bases de Datos" };
                     List<string> corr_disAdmin = new List<string>();
                     corr_disAdmin.Add("Laboratorio de Computación III");
@@ -111,37 +144,38 @@ namespace VistaGestionFacultad
 
 
 
-                    db.Asigns.Add(a);
-                    db.Asigns.Add(b);
-                    db.Asigns.Add(c);
-                    db.Asigns.Add(d);
-                    db.Asigns.Add(e);
-                    db.Asigns.Add(f);
-                    db.Asigns.Add(g);
-                    db.Asigns.Add(h);
-                    db.Asigns.Add(i);
-                    db.Asigns.Add(j);
-                    db.Asigns.Add(k);
-                    db.Asigns.Add(l);
-                    db.Asigns.Add(m);
-                    db.Asigns.Add(n);
-                    db.Asigns.Add(o);
-                    db.Asigns.Add(p);
-                    db.Asigns.Add(q);
-                    db.Asigns.Add(r);
-                    db.Asigns.Add(s);
-                    db.Asigns.Add(t);
+                    dba.Asigns.Add(a);
+                    dba.Asigns.Add(b);
+                    dba.Asigns.Add(c);
+                    dba.Asigns.Add(d);
+                    dba.Asigns.Add(e);
+                    dba.Asigns.Add(f);
+                    dba.Asigns.Add(g);
+                    dba.Asigns.Add(h);
+                    dba.Asigns.Add(i);
+                    dba.Asigns.Add(j);
+                    dba.Asigns.Add(k);
+                    dba.Asigns.Add(l);
+                    dba.Asigns.Add(m);
+                    dba.Asigns.Add(n);
+                    dba.Asigns.Add(o);
+                    dba.Asigns.Add(p);
+                    dba.Asigns.Add(q);
+                    dba.Asigns.Add(r);
+                    dba.Asigns.Add(s);
+                    dba.Asigns.Add(t);
+                   
+                    
 
-
-                    db.SaveChanges();
+                    dba.SaveChanges();
 
                 }
                 
 
 
                 //AULAS y Cursos
-                bool isCursosEmpty = !db.Cursos.Any();
-                bool isAulaEmpty = !db.Aulas.Any();
+                bool isCursosEmpty = !dba.Cursos.Any();
+                bool isAulaEmpty = !dba.Aulas.Any();
 
                 if (isAulaEmpty)
                 {
@@ -197,15 +231,15 @@ namespace VistaGestionFacultad
                     a8.Proyeccion = true;
                     a8.Aul = "1.5";
 
-                    db.Aulas.Add(a1);
-                    db.Aulas.Add(a2);
-                    db.Aulas.Add(a3);
-                    db.Aulas.Add(a4);
-                    db.Aulas.Add(a5);
-                    db.Aulas.Add(a6);
-                    db.Aulas.Add(a7);
-                    db.Aulas.Add(a8);
-                    db.SaveChanges();
+                    dba.Aulas.Add(a1);
+                    dba.Aulas.Add(a2);
+                    dba.Aulas.Add(a3);
+                    dba.Aulas.Add(a4);
+                    dba.Aulas.Add(a5);
+                    dba.Aulas.Add(a6);
+                    dba.Aulas.Add(a7);
+                    dba.Aulas.Add(a8);
+                    dba.SaveChanges();
                 }
 
                 if (isCursosEmpty) { 
@@ -264,25 +298,25 @@ namespace VistaGestionFacultad
                     c12.Division = "Turno Noche";
                     c12.aula = a4;
 
-                    db.Cursos.Add(c1);
-                    db.Cursos.Add(c2);
-                    db.Cursos.Add(c3);
-                    db.Cursos.Add(c4);
-                    db.Cursos.Add(c5);
-                    db.Cursos.Add(c6);
-                    db.Cursos.Add(c7);
-                    db.Cursos.Add(c8);
-                    db.Cursos.Add(c9);
-                    db.Cursos.Add(c10);
-                    db.Cursos.Add(c11);
-                    db.Cursos.Add(c12);
-                    db.SaveChanges();
+                    dba.Cursos.Add(c1);
+                    dba.Cursos.Add(c2);
+                    dba.Cursos.Add(c3);
+                    dba.Cursos.Add(c4);
+                    dba.Cursos.Add(c5);
+                    dba.Cursos.Add(c6);
+                    dba.Cursos.Add(c7);
+                    dba.Cursos.Add(c8);
+                    dba.Cursos.Add(c9);
+                    dba.Cursos.Add(c10);
+                    dba.Cursos.Add(c11);
+                    dba.Cursos.Add(c12);
+                    dba.SaveChanges();
 
 
 
                 }
                 
-                bool isProfesEmpty = !db.Profes.Any();
+                bool isProfesEmpty = !dba.Profes.Any();
                 if (isProfesEmpty)
                 {
 
@@ -300,23 +334,23 @@ namespace VistaGestionFacultad
                     var p9 = new Profesor("Steve", "Rogers", 10236250, 610026, "Entre Rios 942", materias);
                     var p10 = new Profesor("Hank", "McCoy", 24740650, 610026, "José Hernandez 669", materias);
 
-                    db.Profes.Add(p1);
-                    db.Profes.Add(p2);
-                    db.Profes.Add(p3);
-                    db.Profes.Add(p4);
-                    db.Profes.Add(p5);
-                    db.Profes.Add(p6);
-                    db.Profes.Add(p7);
-                    db.Profes.Add(p8);
-                    db.Profes.Add(p9);
-                    db.Profes.Add(p10);
-                    db.SaveChanges();
+                    dba.Profes.Add(p1);
+                    dba.Profes.Add(p2);
+                    dba.Profes.Add(p3);
+                    dba.Profes.Add(p4);
+                    dba.Profes.Add(p5);
+                    dba.Profes.Add(p6);
+                    dba.Profes.Add(p7);
+                    dba.Profes.Add(p8);
+                    dba.Profes.Add(p9);
+                    dba.Profes.Add(p10);
+                    dba.SaveChanges();
 
                 }
                 
 
 
-                bool isAlumnosEmpty = !db.Alumnos.Any();
+                bool isAlumnosEmpty = !dba.Alumnos.Any();
                 if (isAlumnosEmpty)
                 {
 
@@ -339,22 +373,22 @@ namespace VistaGestionFacultad
                     var alum15 = new Alumno("Carl", "Johnson", 40696969, 771267, "Colón 425");
 
 
-                    db.Alumnos.Add(alum1);
-                    db.Alumnos.Add(alum2);
-                    db.Alumnos.Add(alum3);
-                    db.Alumnos.Add(alum4);
-                    db.Alumnos.Add(alum5);
-                    db.Alumnos.Add(alum6);
-                    db.Alumnos.Add(alum7);
-                    db.Alumnos.Add(alum8);
-                    db.Alumnos.Add(alum9);
-                    db.Alumnos.Add(alum10);
-                    db.Alumnos.Add(alum11);
-                    db.Alumnos.Add(alum12);
-                    db.Alumnos.Add(alum13);
-                    db.Alumnos.Add(alum14);
-                    db.Alumnos.Add(alum15);
-                    db.SaveChanges();
+                    dba.Alumnos.Add(alum1);
+                    dba.Alumnos.Add(alum2);
+                    dba.Alumnos.Add(alum3);
+                    dba.Alumnos.Add(alum4);
+                    dba.Alumnos.Add(alum5);
+                    dba.Alumnos.Add(alum6);
+                    dba.Alumnos.Add(alum7);
+                    dba.Alumnos.Add(alum8);
+                    dba.Alumnos.Add(alum9);
+                    dba.Alumnos.Add(alum10);
+                    dba.Alumnos.Add(alum11);
+                    dba.Alumnos.Add(alum12);
+                    dba.Alumnos.Add(alum13);
+                    dba.Alumnos.Add(alum14);
+                    dba.Alumnos.Add(alum15);
+                    dba.SaveChanges();
 
                 }
                 

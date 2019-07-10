@@ -66,6 +66,7 @@ namespace VistaGestionFacultad
                 alum = new Alumno(nom, ap, dn, tel, direcc);
                 db.Alumnos.Add(alum);
                 db.SaveChanges();
+                MessageBox.Show("Alta realizada con exito!");
             }
             
         }

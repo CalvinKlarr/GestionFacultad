@@ -10,7 +10,13 @@ namespace GestionFacultad
     public class Profesor: Usuario
     {
 
-        public List<string> materias;
+        private List<string> _materias = new List<string>();
+        public List<string> materias { get { return _materias; } set { _materias = value; } }
+        public string materiasDB
+        {
+            get { return String.Join(",", _materias); }
+            set { _materias = value.Split(',').ToList(); }
+        }
         
         private int dni_ID;
         [Key]
@@ -27,7 +33,7 @@ namespace GestionFacultad
             this.Dni = doc;
             this.tel = phone;
             this.direc = direcc;
-            this.materias = materias = new List<string>();
+            this._materias = materias = new List<string>();
 
         }
     }
