@@ -65,8 +65,44 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="agregarProfesControl.xaml.cs">
+      <DependentUpon>agregarProfesControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="alumnoControl.xaml.cs">
       <DependentUpon>alumnoControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="asignarProfeControl.xaml.cs">
+      <DependentUpon>asignarProfeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="asignaturasControl.xaml.cs">
+      <DependentUpon>asignaturasControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="cursosControl.xaml.cs">
+      <DependentUpon>cursosControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="deleteControl.xaml.cs">
+      <DependentUpon>deleteControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="eliminarProfeControl.xaml.cs">
+      <DependentUpon>eliminarProfeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="inscribirControl.xaml.cs">
+      <DependentUpon>inscribirControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modificarProfeControl.xaml.cs">
+      <DependentUpon>modificarProfeControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modificarProfes.xaml.cs">
+      <DependentUpon>modificarProfes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modifyAlumnos.xaml.cs">
+      <DependentUpon>modifyAlumnos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modifyControl.xaml.cs">
+      <DependentUpon>modifyControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="verProfesControl.xaml.cs">
+      <DependentUpon>verProfesControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="viewAlumnoControl.xaml.cs">
       <DependentUpon>viewAlumnoControl.xaml</DependentUpon>
@@ -80,6 +116,30 @@
     <Compile Include="Window3.xaml.cs">
       <DependentUpon>Window3.xaml</DependentUpon>
     </Compile>
+    <Page Include="agregarProfesControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="asignarProfeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="asignaturasControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="cursosControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="deleteControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="eliminarProfeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -93,6 +153,30 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="alumnoControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="inscribirControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modificarProfeControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modificarProfes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modifyAlumnos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modifyControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="verProfesControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -145,6 +229,9 @@
       <Project>{2528891c-1d4a-4b68-9dc4-035a032d8290}</Project>
       <Name>GestionFacultad</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="X.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

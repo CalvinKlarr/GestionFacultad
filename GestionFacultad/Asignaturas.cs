@@ -11,24 +11,24 @@ namespace GestionFacultad
     public class Asignaturas
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        
         public string Asign { get; set; }
-
-
-        private List<String> _correlativas {get; set;}
-        public List<string> correlativas { get{ return _correlativas;} set {_correlativas=value;}}
-
-
-          [Required]
-         public string StringsAsString
-         {
+        private List<string> _correlativas = new List<string>();
+        public List<string> correlativas { get { return _correlativas; } set { _correlativas = value; } }
+        
+        public string correlativasDB
+        {
             get { return String.Join(",", _correlativas); }
             set { _correlativas = value.Split(',').ToList(); }
-         }
-
-
-
-        public List<Alumno> inscriptos = new List<Alumno>();
+        }
+        private List<string> _inscriptos = new List<string>();
+        public List<string> inscriptos { get { return _inscriptos; } set { _inscriptos = value; } }
+        public string inscriptosDB
+        {
+            get { return String.Join(",", _inscriptos); }
+            set { _inscriptos = value.Split(',').ToList(); }
+        }
+        
 
 
         /*  public Asignaturas(string asig, List<string> correlatives)
@@ -41,6 +41,11 @@ namespace GestionFacultad
           {
 
           } } */
+
+        public override string ToString()
+        {
+            return Asign;
+        }
 
     }
 }

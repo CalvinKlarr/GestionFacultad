@@ -10,8 +10,20 @@ namespace GestionFacultad
     {
         public int id { get; set; }
 
-        public Asignaturas[] asignaturas;
-        public List<Alumno> alumnos = new List<Alumno>();
+        private List<string> _asignaturas = new List<string>();
+        public List<string> asignaturas { get { return _asignaturas; } set { _asignaturas = value; } }
+        public string asignaturasDB
+        {
+            get { return String.Join(",", _asignaturas); }
+            set { _asignaturas = value.Split(',').ToList(); }
+        }
+        private List<string> _alumnoID = new List<string>();
+        public List<string> alumnoID { get { return _alumnoID; } set { _alumnoID = value; } }
+        public string alumnoIDDB
+        {
+            get { return String.Join(",", _alumnoID); }
+            set { _alumnoID = value.Split(',').ToList(); }
+        }
 
         public Aula aula { get; set; }
 
@@ -27,6 +39,11 @@ namespace GestionFacultad
         public Curso()
         {
             curdivision = cur + " - " + division;
+        }
+
+        public override string ToString()
+        {
+            return cur + " " + division;
         }
     }
 }

@@ -12,34 +12,12 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <Button Name="verProfesores" Grid.Column="0" Background="#FFB3C0C7" FontFamily="Times New Roman" Margin="10,145,10,220" Content="Ver profesores" Click="VerProfesores_Click"/>
-        <Grid Grid.Column="1" Name="displayBox3" Background="#FFB3C0C7" Margin="10">
-            <TextBlock Name="elegirProfesor" FontFamily="Times New Roman" Margin="10,10,308,366" TextWrapping="Wrap"></TextBlock>
-            <ComboBox Name="profesores" Margin="10,143,271,255" SelectionChanged="Profesores_SelectionChanged" Visibility="Collapsed" Height="21">
-                <ComboBoxItem Name="itemOne">Primer cuatrimestre - Mañana</ComboBoxItem>
-                <ComboBoxItem Name="itemTwo">Primer cuatrimestre - Tarde</ComboBoxItem>
-                <ComboBoxItem Name="itemThree">Primer cuatrimestre - Noche</ComboBoxItem>
-                <ComboBoxItem Name="itemFour">Segundo cuatrimestre - Mañana</ComboBoxItem>
-                <ComboBoxItem Name="itemFive">Segundo cuatrimestre - Tarde</ComboBoxItem>
-                <ComboBoxItem Name="itemSix">Segundo cuatrimestre - Noche</ComboBoxItem>
-                <ComboBoxItem Name="itemSeven">Tercer cuatrimestre - Noche</ComboBoxItem>
-                <ComboBoxItem Name="itemEight">Cuarto cuatrimestre - Noche</ComboBoxItem>
-                <ComboBoxItem Name="itemNine"></ComboBoxItem>
-                <ComboBoxItem Name="itemTen"></ComboBoxItem>
-                <ComboBoxItem Name="itemEleven"></ComboBoxItem>
-                <ComboBoxItem Name="itemTwelve"></ComboBoxItem>
-                <ComboBoxItem Name="itemThirteen"></ComboBoxItem>
-                <ComboBoxItem Name="itemFourteen"></ComboBoxItem>
-                <ComboBoxItem Name="itemFifteen"></ComboBoxItem>
-                <ComboBoxItem Name="itemSixteen"></ComboBoxItem>
-                <ComboBoxItem Name="itemSeventeen"></ComboBoxItem>
-                <ComboBoxItem Name="itemEightteen"></ComboBoxItem>
-                <ComboBoxItem Name="itemNineteen"></ComboBoxItem>
-                <ComboBoxItem Name="itemTwenty"></ComboBoxItem>
+        <Grid Grid.Column="1" Name="displayBox3" Background="#FFB3C0C7" Margin="10"/>
+        <Button Name="agregar" Content="Agregar" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="22,42,0,0" Height="43" Click="Agregar_Click"/>
+        <Button Name="modificar" Content="Modificar" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="22,114,0,0" Height="43" Click="Modificar_Click"/>
+        <Button Name="eliminar" Content="Eliminar" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="22,183,0,0" Height="43" Click="Eliminar_Click"/>
+        <Button Name="asignar" Content="Asignar" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="22,250,0,0" Height="43" Click="Asignar_Click"/>
+        <Button x:Name="ver" Content="Ver" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Width="273" Margin="22,316,0,0" Height="43" Click="Ver_Click"/>
 
-                </ComboBox>
-            <DataGrid Name="profesoresGrid" Visibility="Collapsed" HorizontalAlignment="Left" Height="154" Margin="10,125,0,0" VerticalAlignment="Top" Width="334"/>
-        </Grid>
-        
     </Grid>
 </Window>

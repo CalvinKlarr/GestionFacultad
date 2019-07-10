@@ -22,7 +22,12 @@ namespace VistaGestionFacultad
     public partial class Window3 : Window
     {
         ProgramControl db = new ProgramControl();
-        
+        verProfesControl vecont;
+        agregarProfesControl agcont;
+        eliminarProfeControl elcont;
+        asignarProfeControl ascont;
+        modificarProfeControl mocont;
+
         public Window3()
         {
             InitializeComponent();
@@ -34,30 +39,81 @@ namespace VistaGestionFacultad
             db.SaveChanges();
         }
 
-        private void Profesores_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
-        }
-        //Evento al hacer click en ver profesores
-        private void VerProfesores_Click(object sender, RoutedEventArgs e)
+        private void Agregar_Click(object sender, RoutedEventArgs e)
         {
-            profesoresGrid.Visibility = Visibility.Visible;
-            var dset = db.Profes;
-            DbSet<Profesor> qry = dset;
-            qry.Load();
-            profesoresGrid.ItemsSource = dset.Local.ToBindingList();
-            
-        }
-        //Unused
-        private void BajaProfesor_Click(object sender, RoutedEventArgs e)
-        {
-            
+            if (displayBox3.Children.Count == 0)
+            {
+                agcont = new agregarProfesControl();
+                displayBox3.Children.Add(agcont);
 
+            }
+            else
+            {
+                displayBox3.Children.Clear();
+                agcont = new agregarProfesControl();
+                displayBox3.Children.Add(agcont);
+            }
         }
-        //Unused
-        private void ModificarProfesor_Click(object sender, RoutedEventArgs e)
+
+        private void Modificar_Click(object sender, RoutedEventArgs e)
         {
-            
+            if (displayBox3.Children.Count == 0)
+            {
+                mocont = new modificarProfeControl();
+                displayBox3.Children.Add(mocont);
+            }
+            else
+            {
+                displayBox3.Children.Clear();
+                mocont = new modificarProfeControl();
+                displayBox3.Children.Add(mocont);
+            }
+        }
+
+        private void Eliminar_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox3.Children.Count == 0)
+            {
+                elcont = new eliminarProfeControl();
+                displayBox3.Children.Add(elcont);
+            }
+            else
+            {
+                displayBox3.Children.Clear();
+                elcont = new eliminarProfeControl();
+                displayBox3.Children.Add(elcont);
+            }
+        }
+
+        private void Asignar_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox3.Children.Count == 0)
+            {
+                ascont = new asignarProfeControl();
+                displayBox3.Children.Add(ascont);
+            }
+            else
+            {
+                displayBox3.Children.Clear();
+                ascont = new asignarProfeControl();
+                displayBox3.Children.Add(ascont);
+            }
+        }
+
+        private void Ver_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox3.Children.Count == 0)
+            {
+                vecont = new verProfesControl();
+                displayBox3.Children.Add(vecont);
+            }
+            else
+            {
+                displayBox3.Children.Clear();
+                vecont = new verProfesControl();
+                displayBox3.Children.Add(vecont);
+            }
         }
     }
 }

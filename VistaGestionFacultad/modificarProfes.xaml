@@ -1,0 +1,47 @@
+﻿<Window x:Class="VistaGestionFacultad.modificarProfes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VistaGestionFacultad"
+        mc:Ignorable="d"
+        Title="modificarProfes" Height="686" Background="#FFB3C0C7" WindowStyle="None" Width="400">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="118*"/>
+            <ColumnDefinition Width="12*"/>
+            <ColumnDefinition Width="255*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="27*"/>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="28*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="23*"/>
+            <RowDefinition Height="9*"/>
+            <RowDefinition Height="166*"/>
+            <RowDefinition Height="292*"/>
+        </Grid.RowDefinitions>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="15" Text="Nombre"  Grid.Row="1" Margin="34,0,29,0" Grid.Column="1" Width="55"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="15" Text="Apellido"  Grid.Row="2" Margin="34,0,29,25" Grid.RowSpan="2" Grid.Column="1" Width="55"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="15" Text="DNI"  Grid.Row="3" Margin="47,2,38,0" Grid.Column="1" Width="33"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="15" Text="Telefono"  Grid.Row="4" Margin="38,0,19,0" Width="61" Grid.Column="1"/>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" FontSize="15" Text="Direccion"  Grid.Row="5" Margin="35,0,19,0" Width="64" Grid.Column="1"/>
+        <TextBox Name="nombre" TextWrapping="Wrap"  Grid.Column="3"  Grid.Row="1"/>
+        <TextBox Name="apellido" TextWrapping="Wrap"  Grid.Column="3"  Grid.Row="3"/>
+        <TextBox Name="dni" TextWrapping="Wrap"  Grid.Column="3"  Grid.Row="2"/>
+        <TextBox Name="telefono" TextWrapping="Wrap"  Grid.Column="3"  Grid.Row="4" Margin="0,0,0,27" Grid.RowSpan="2"/>
+        <TextBox Name="direccion" TextWrapping="Wrap"  Grid.Column="3"  Grid.Row="5"/>
+        <ListBox Name="materias"  Grid.Row="9" Grid.Column="1"/>
+        <Button Name="agregar" Content="Agregar" Grid.Column="3" Margin="76,17,66,115" Grid.Row="9" Click="Agregar_Click"/>
+        <Button Name="quitar" Content="Quitar" Grid.Column="3" Margin="76,102,66,30" Grid.Row="9" Click="Quitar_Click"/>
+        <Button Name="confirmar" Content="Confirmar" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140" Grid.Column="1" Margin="109,101,0,0" Grid.Row="10" Grid.ColumnSpan="3" Height="41" Click="Confirmar_Click"/>
+        <TextBlock HorizontalAlignment="Center" FontSize="15" TextWrapping="Wrap" Grid.Column="1"  Grid.Row="7" ><Run Text="Asignaturas"/></TextBlock>
+        <ComboBox Name="materiasAgregar" Grid.Column="3" Grid.Row="7" />
+
+    </Grid>
+</Window>

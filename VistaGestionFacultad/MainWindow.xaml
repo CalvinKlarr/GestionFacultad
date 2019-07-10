@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VistaGestionFacultad"
         mc:Ignorable="d"
-        Title="Facultad" Width="410" Height="200" Background="#FF4881A2">
+        Title="Facultad" Width="410" Height="200" WindowStyle="None" Background="#FF4881A2">
     <Window.Resources>
         <Image x:Key="exittIcon" Source="C:\Users\Juan\source\repos\Facultad\Facultad\Resources\exitIcon.png"/>
     </Window.Resources>

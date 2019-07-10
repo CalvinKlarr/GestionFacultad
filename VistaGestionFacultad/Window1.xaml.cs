@@ -27,6 +27,11 @@ namespace VistaGestionFacultad
         ProgramControl db;
         alumnoControl alcont;
         viewAlumnoControl valcont;
+        inscribirControl incont;
+        asignaturasControl ascont;
+        cursosControl cucont;
+        modifyControl mocont;
+        deleteControl decont;
         //Constructor, se instancia el contexto de la DB, y se agrega un evento al cerrarse la ventana
         public Window1(ProgramControl programControl)
         {
@@ -72,6 +77,89 @@ namespace VistaGestionFacultad
                 displayBox.Children.Add(valcont);
             }
             
+
+        }
+
+        private void Inscribir_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(displayBox.Children.Count == 0)
+            {
+                incont = new inscribirControl();
+                displayBox.Children.Add(incont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                incont = new inscribirControl();
+                displayBox.Children.Add(incont);
+            }
+        }
+
+        
+
+        private void VerAsig_Click(object sender, RoutedEventArgs e)
+        {
+            if(displayBox.Children.Count == 0)
+            {
+                ascont = new asignaturasControl();
+                displayBox.Children.Add(ascont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                ascont = new asignaturasControl();
+                displayBox.Children.Add(ascont);
+            }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void VerCurso_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox.Children.Count == 0)
+            {
+                cucont = new cursosControl();
+                displayBox.Children.Add(cucont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                cucont = new cursosControl();
+                displayBox.Children.Add(cucont);
+            }
+        }
+
+        private void Modificar_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox.Children.Count == 0)
+            {
+                mocont = new modifyControl();
+                displayBox.Children.Add(mocont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                mocont = new modifyControl();
+                displayBox.Children.Add(mocont);
+            }
+        }
+
+        private void Borrar_Click(object sender, RoutedEventArgs e)
+        {
+            if (displayBox.Children.Count == 0)
+            {
+                decont = new deleteControl();
+                displayBox.Children.Add(decont);
+            }
+            else
+            {
+                displayBox.Children.Clear();
+                decont = new deleteControl();
+                displayBox.Children.Add(decont);
+            }
 
         }
     }
